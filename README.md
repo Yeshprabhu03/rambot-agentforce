@@ -26,7 +26,7 @@ RamBot is an AI admissions assistant for graduate admissions at Fordham's Gabell
 
 ## 1. Ambition
 
-Build a trustworthy AI agent for a real service team on Salesforce: an agent that:
+Build a trustworthy AI agent on Salesforce for a real service team, one that:
 
 - **answers** routine questions instantly and accurately, using approved content;
 - **acts** on real records, such as booking an appointment, registering for an event, capturing a lead or checking an application, with business rules enforced by the platform rather than by the prompt;
