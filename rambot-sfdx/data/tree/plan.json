@@ -1,0 +1,42 @@
+[
+ {
+  "sobject": "Program__c",
+  "saveRefs": false,
+  "resolveRefs": false,
+  "files": [
+   "Program__c.json"
+  ]
+ },
+ {
+  "sobject": "Faculty__c",
+  "saveRefs": false,
+  "resolveRefs": false,
+  "files": [
+   "Faculty__c.json"
+  ]
+ },
+ {
+  "sobject": "Campaign",
+  "saveRefs": false,
+  "resolveRefs": false,
+  "files": [
+   "Campaign.json"
+  ]
+ },
+ {
+  "sobject": "Application__c",
+  "saveRefs": true,
+  "resolveRefs": false,
+  "files": [
+   "Application__c.json"
+  ]
+ },
+ {
+  "sobject": "Advising_Appointment__c",
+  "saveRefs": false,
+  "resolveRefs": true,
+  "files": [
+   "Advising_Appointment__c.json"
+  ]
+ }
+]

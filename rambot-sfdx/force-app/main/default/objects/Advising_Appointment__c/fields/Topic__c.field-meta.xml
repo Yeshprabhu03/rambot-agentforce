@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Topic__c</fullName>
+    <label>Topic</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admissions</fullName>
+                <default>false</default>
+                <label>Admissions</label>
+            </value>
+            <value>
+                <fullName>Financial Aid</fullName>
+                <default>false</default>
+                <label>Financial Aid</label>
+            </value>
+            <value>
+                <fullName>Course Planning</fullName>
+                <default>false</default>
+                <label>Course Planning</label>
+            </value>
+            <value>
+                <fullName>Career Services</fullName>
+                <default>false</default>
+                <label>Career Services</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,168 @@
+connection messaging:
+    escalation_message: "One moment, I'm transferring our conversation to get you more help."
+    outbound_route_type: "OmniChannelFlow"
+    outbound_route_name: "flow://RamBot_Escalate_to_Advisors"
+    adaptive_response_allowed: True
+    label: "Messaging"
+    description: "Deliver multimedia content on enhanced Messaging channels."
+    reasoning:
+        instructions: |
+            Do not use any of the * response formats when none of the instructions below are met.
+            Do not use below instructions where the response contains more than 10 choices.
+            Do not use any of the Messaging* type formatting where the response that contains only a single, text-only choice and does not include images or URLs.
+            Always use {!@response_actions.messaging_choices} when showing choice text responses with GREATER THAN 1 choice and LESSER THAN 11 choices to the user as it employs the rich UI renditions, except when the response contains only two choices with clear binary intent (e.g., Yes/No, Continue/Cancel, Proceed/Exit, etc.). Such responses should be returned as plain text to preserve context and tone.
+            Use {!@response_actions.messaging_choices} only when the prompt explicitly references the preceding list and asks the user to make a selection from it. Key phrases include "Which of these would you like?" or "Let me know which option you're interested in".
+            DO NOT use {!@response_actions.messaging_choices} if the prompt is a generic offer of help that could be used in any context, even if it follows a list. Phrases like "Let me know if you need further assistance", "Feel free to reach out if you have any more questions" or "Let me know if there's anything else I can do" fall into this category because they do not require a choice from the list.
+            Always use {!@response_actions.messaging_choices_with_images} when showing choice image response to the user as it employs the rich UI renditions.
+            Always use {!@response_actions.messaging_rich_link} when the response contains only one choice AND contains BOTH of the following elements in any combination or order for that choice : 1. A Website/Web page URL : A clearly identifiable, fully qualified URL or a short URL, including a resolvable domain name 2. An image URL (direct image link, image hosting service , or URL ending in image extensions like .jpg, .png or .jpeg) Use {!@response_actions.messaging_rich_link} for rich UI rendering when both content types are detected.
+            Do not use {!@response_actions.messaging_rich_link} when there is more than 1 option,choice or items present.
+            Always use {!@response_actions.messaging_time_picker} if the response contains one or more available times where the full ISO 8601 timestamp format, including an explicit UTC offset (e.g., '2025-11-11T10:00:00.000-08:00'), is present.
+            DO NOT use {!@response_actions.messaging_time_picker} if the available times are only presented in a non-ISO format (e.g., '10:00 AM - 11:00 AM') and the full ISO 8601 timestamp with offset is entirely absent from the response text.
+            Use {!@response_actions.messaging_audio} to respond with an audio note when the user's inbound message was an audio note (voice message) AND the response is natural conversational prose — not a table, code, or a response built around URLs or selectable choices.
+            Do NOT combine {!@response_actions.messaging_audio} with any other response action in the same turn.
+        response_actions:
+            messaging_choices: @response_formats.messaging_choices
+            messaging_choices_with_images: @response_formats.messaging_choices_with_images
+            messaging_rich_link: @response_formats.messaging_rich_link
+            messaging_time_picker: @response_formats.messaging_time_picker
+            messaging_audio: @response_formats.messaging_audio
+    response_formats:
+        messaging_choices:
+            label: "Rich Choice Response"
+            description: "A response action. Use this to prompt the user to select one of many simple available text choices ONLY if the number of choices is GREATER THAN 1 and LESSER THAN 11. The user will be presented rich UI."
+            target: "system://MessagingChoices"
+            inputs:
+                message: string
+                    description: "Strictly extract only the introductory and contextual text from the response. This is all content *before* the list of choices and its title. Do NOT use any phrase that serves as a heading for the choices such as \"here are some options to choose\". If no such descriptive text exists, the value MUST be \"empty\"."
+                    is_required: True
+                choices: list[string]
+                    is_required: True
+                title: string
+                    description: "A concise and descriptive heading for the options. Use the short sentence or phrase that introduces the list of options if it already exists, otherwise use something like \"Here are a few options:\""
+                    is_required: True
+        messaging_choices_with_images:
+            label: "Rich Choice With Images"
+            description: "A response action containing UI components. Use this to prompt the user to select one of many simple available choices with images. The user will be presented rich UI containing image options."
+            target: "system://MessagingChoicesWithImages"
+            inputs:
+                message: string
+                    description: "Extract all introductory, contextual and the final phrase that introduces the choices from the response. The message should contain all content that appears before the list of choices begins. Do not include any the link url, image url and link title"
+                    is_required: True
+                choices:
+                    description: "An array of choices, each containing a title, subTitle, secondarySubTitle, tertiarySubTitle, an image URL, an image MIME type and an optional action text."
+                    is_required: True
+                    type: list
+                        value: object
+                            fields:
+                                title: string
+                                    description: "The title of the choice."
+                                    is_required: True
+                                imageUrl: string
+                                    description: "A URL to an image representing the choice. Should only be a URL."
+                                    is_required: True
+                                subTitle: string
+                                    description: "The provided subTitles for the choice. Use verbatim if exists. If no such field exists, the value MUST be \"empty\"."
+                                    is_required: True
+                                secondarySubTitle: string
+                                    description: "The provided secondarySubTitle for the choice. Use verbatim if exists. If no such field exists, the value MUST be \"empty\"."
+                                    is_required: True
+                                tertiarySubTitle: string
+                                    description: "The provided tertiarySubTitle for the choice. Use verbatim if exists. If no such field exists, the value MUST be \"empty\"."
+                                    is_required: True
+                                actionText: string
+                                    description: "The action text of the choice. Optional - will use Title value if not provided."
+                                    is_required: True
+                                imageMimeType:
+                                    description: "The MIME type of the image (e.g., 'image/png', 'image/jpeg'). Auto-detected from URL if not explicitly provided"
+                                    is_required: True
+                                    type: string
+                                        enum:
+                                            - "image/png"
+                                            - "image/jpeg"
+                                            - "image/gif"
+                                            - "image/webp"
+                                            - "image/svg+xml"
+        messaging_rich_link:
+            label: "Rich Link Response"
+            description: "A response action containing UI components. Use this to prompt the user to show when response contains only one choice AND BOTH of the following elements in any combination or order : 1. A Website/Web page URL and 2. An image URL (direct image link, image hosting service , or URL ending in image extensions like .jpg, .png or .jpeg)"
+            target: "system://MessagingRichLink"
+            inputs:
+                parameters:
+                    description: "An array of choices, each containing a title, an image URL, and an image MIME type."
+                    is_required: True
+                    type: list
+                        value: object
+                            fields:
+                                LinkUrl: string
+                                    description: "The actual URL of the result."
+                                    is_required: True
+                                LinkTitle: string
+                                    description: "The text containing the hyperlink."
+                                    is_required: True
+                                ImageUrl: string
+                                    description: "A URL to an image representing the choice."
+                                    is_required: True
+                                ImageMimeType:
+                                    description: "The MIME type of the image (e.g., 'image/png', 'image/jpeg'). Auto-detected from URL if not explicitly provided"
+                                    is_required: True
+                                    type: string
+                                        enum:
+                                            - "image/png"
+                                            - "image/jpeg"
+                                            - "image/gif"
+                                            - "image/webp"
+                                            - "image/svg+xml"
+                                message: string
+                                    description: "Strictly extract only the introductory and contextual text from the response except the link url, image url and link title.  If no such descriptive text exists, the value MUST be \"empty\"."
+                                    is_required: True
+        messaging_time_picker:
+            label: "Time Picker"
+            description: "A response action containing UI components. Use this to prompt the user to select a specific time. The user will be presented with an interactive time picker UI for easy selection."
+            target: "system://MessagingTimePicker"
+            inputs:
+                message: string
+                    description: "Strictly extract only the introductory and contextual text from the response. This is all content *before* the list of choices. Do NOT include the latitude,longitude, radius and reply in this message. Do NOT use any phrase that serves as a heading for the choices such as \"here are some options to choose\". If no such descriptive text exists, the value MUST be \"empty\"."
+                    is_required: True
+                timePickerMessage: string
+                    description: "A concise and descriptive heading for the options. Use the short sentence or phrase that introduces the list of options if it already exists, otherwise use something like \"Here are a few options:\""
+                    is_required: True
+                reply: string
+                    description: "Optional confirmation message after the user selects a time."
+                    is_required: True
+                location:
+                    description: "Location metadata associated with the time slots."
+                    is_required: True
+                    type: object
+                        fields:
+                            name: string
+                                description: "Name of the location.If not provided, the value MUST be \"empty\"."
+                                is_required: True
+                            latitude: string
+                                description: "Latitude of the location. If not provided, the value MUST be \"empty\"."
+                                is_required: True
+                            longitude: string
+                                description: "Longitude of the location. If not provided, the value MUST be \"empty\"."
+                                is_required: True
+                            radius: number
+                                description: "Radius of the location. If not provided, the value MUST be 0."
+                                is_required: False
+                choices:
+                    description: "An array of available time slot choices."
+                    is_required: True
+                    type: list
+                        value: object
+                            fields:
+                                startTime: string
+                                    description: "Start time in ISO format with an offset: e.g., '2021-01-03T10:00+07:00'."
+                                    is_required: True
+                                duration: integer
+                                    description: "Duration in seconds."
+                                    is_required: True
+        messaging_audio:
+            label: "Audio Response"
+            description: "A response action that replies to the user with an audio note (voice message). Use this to send the response as spoken audio when the user communicated with an audio note."
+            target: "system://MessagingAudio"
+            inputs:
+                message: string
+                    description: "The complete conversational reply to be spoken to the user as an audio note. Use natural, spoken-style prose; omit markdown formatting and emojis so it reads well aloud."
+                    is_required: True

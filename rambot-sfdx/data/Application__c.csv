@@ -1,0 +1,9 @@
+Id,Name,Student_Email__c,Student_Name__c,Program__c,Term__c,Status__c,Missing_Items__c,Decision_Date__c
+a00fj00002el1F7AAI,A-1001,arjun.mehta@example.com,Arjun Mehta,MS Business Analytics,Fall 2027,Under Review,,2027-03-15
+a00fj00002el1F8AAI,A-1002,emily.carter@example.com,Emily Carter,MBA Full-Time,Fall 2027,Interview Scheduled,,2027-02-28
+a00fj00002el1F9AAI,A-1003,priya.shah@example.com,Priya Shah,MS Information Systems,Fall 2027,Incomplete,Official transcript; second letter of recommendation,2027-04-01
+a00fj00002el1FAAAY,A-1004,daniel.okafor@example.com,Daniel Okafor,MS Finance,Spring 2027,Admitted,,2026-11-20
+a00fj00002el1FBAAY,A-1005,sofia.rossi@example.com,Sofia Rossi,MBA Full-Time,Fall 2027,Submitted,,2027-03-31
+a00fj00002el1FCAAY,A-1006,kevin.liu@example.com,Kevin Liu,MS Business Analytics,Spring 2027,Waitlisted,,2026-11-30
+a00fj00002el1FDAAY,A-1007,hannah.brooks@example.com,Hannah Brooks,MS Finance,Fall 2027,Incomplete,GMAT or GRE score report,2027-04-01
+a00fj00002el1FEAAY,A-1008,marcus.reyes@example.com,Marcus Reyes,MS Information Systems,Spring 2027,Under Review,,2026-12-10

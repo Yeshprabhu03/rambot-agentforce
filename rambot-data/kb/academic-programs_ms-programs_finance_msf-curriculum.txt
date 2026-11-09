@@ -1,0 +1,13 @@
+Title: M.S.F. Curriculum
+Source: https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/graduate-programs/academic-programs/ms-programs/finance/msf-curriculum
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# M.S.F. Curriculum
+
+An intensive curriculum, with flexibility built in.
+
+The Master of Science in Finance (M.S.F.) is designed for students who want to specialize in finance.
+
+Located in the heart of New York City, the program provides many opportunities to interact with and learn from industry practitioners and world-class professors. Class sizes are small to facilitate effective instructor-student interactions.
+
+The intensive curriculum is based on corporate finance and investment courses complemented by relevant electives such as Financial Modeling and Programming Language (R/Python), Machine Learning in Finance, and Data Mining and Economic Data.

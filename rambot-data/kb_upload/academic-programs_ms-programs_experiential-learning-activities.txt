@@ -1,0 +1,27 @@
+Title: Experiential Learning Activities
+Source: https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/graduate-programs/academic-programs/ms-programs/experiential-learning-activities
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# Experiential Learning Activities
+
+## Broaden Your Horizons - Set Yourself Apart
+
+As a student enrolled in either the M.S. in Business Analytics or the M.S. in Information Technology, you can expand upon what you are learning in the classroom through hands-on activities that broaden your focus, deepen your knowledge, and afford opportunities to work on projects that can enhance your résumé. From immersive workshops and insightful panel discussions featuring top industry experts, to invaluable professional networking events that build the critical connections you need for success, to competitions and partnerships that foster team-based collaboration, you will find engaging options to interact with peers, professors, and prospective employers, while staying at the cutting edge of business analytics and IT.
+
+Annual Deloitte March Data Crunch Madness
+
+A signature event hosted by the Gabelli School of Business Center for Digital Transformation the Annual Deloitte March Data Crunch Madness is designed to build upon the excitement of the National Collegiate Athletic Association’s (NCAA) Division I men’s and women’s basketball championship tournaments. The competition challenges student teams from business analytics and information technology to employ their analytics skills to predict the outcome of the NCAA Basketball tournament using publicly available data. This year's competition was a spectacular display of skill, innovation, and strategic thinking. Students, guided by the expert insights of Deloitte judges and Gabelli School faculty members, dazzled everyone by transforming complex data into practical, winning strategies. Congratulations to our top teams of the 2024 March Data Crunch Madness competition—Predictive Gamemakers, Data Dunkers II, and The Final Formulas—for their outstanding achievements.
+
+Industry Networking Events and Alumni Panels
+
+As an aspiring business analytics or information technology professional, networking is key to your success! It can open the doors to new opportunities and build relationships that will serve you throughout your career. Because the fields of business analytics and information technology have so many shared synergies, many of our networking events feature guest speakers whose knowledge and professional experiences span across both. Our alumni often come back to campus to participate in industry panels that focus on the latest trends in business analytics and IT. They also share their professional experiences, providing advice and anecdotes that are particularly helpful for those just starting out. Recent alumni speakers include Jennifer McFadden ’23, senior audience analytics & monetization manager, Uber; and Jiacheng Zhang, senior associate, business intelligence & data visualization, GroupM.
+
+Collaborations With Industry Partners and Government Agencies
+
+Collaborations with companies, local government agencies, and international governing bodies allow our students the opportunity to utilize their business analytics and IT skills to help these entities solve problems and make informed decisions. They also underscore our commitment to merging theoretical knowledge with practical applications, ensuring our students are prepared to lead in a digitized world.
+
+Recently, students presented innovative projects in collaboration with Town+Gown: NYC and the United Nations Tec Novation initiative. The Town+Gown project involved using text analytics to understand the root causes of construction delays. The AI Diplomat project equipped UN personnel with cutting-edge artificial intelligence tools, enabling diplomats to access important information in order to make informed decisions. Both resulted in innovative solutions and provided students with projects that demonstrated their command of data analytics to hiring managers and prospective employers.
+
+Educational Workshops
+
+From Tableau to SAS and beyond, our educational workshops provide insights into industry standards and emerging technologies. They are a great addition to your résumé and allow you to refine your technical skills while exploring new ideas and strategies.

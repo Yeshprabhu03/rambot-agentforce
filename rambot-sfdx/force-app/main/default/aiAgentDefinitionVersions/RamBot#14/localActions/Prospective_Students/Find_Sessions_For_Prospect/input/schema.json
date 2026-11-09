@@ -1,0 +1,14 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "keyword" : {
+      "title" : "Program or Topic",
+      "description" : "Optional. Program, interest or location, e.g. Business Analytics, MBA, Finance, India. Leave blank for all upcoming events.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

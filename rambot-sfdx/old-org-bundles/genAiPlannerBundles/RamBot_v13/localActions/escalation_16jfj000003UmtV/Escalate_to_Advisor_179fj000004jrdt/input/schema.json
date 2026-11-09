@@ -1,0 +1,21 @@
+{
+  "required" : [ "issuesSummary", "studentEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "issuesSummary" : {
+      "title" : "issuesSummary",
+      "description" : "A one or two sentence summary of the student's problem, confirmed by the student. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studentEmail" : {
+      "title" : "studentEmail",
+      "description" : "The student's email address. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

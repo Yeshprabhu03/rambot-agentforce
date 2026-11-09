@@ -1,0 +1,64 @@
+{
+ "records": [
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef0"
+   },
+   "Appointment_Time__c": "2026-10-27T21:00:00.000+0000",
+   "Topic__c": "Financial Aid",
+   "Status__c": "Booked",
+   "Application__c": "@Application__cRef2"
+  },
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef1"
+   },
+   "Appointment_Time__c": "2026-10-27T21:00:00.000+0000",
+   "Topic__c": "Financial Aid",
+   "Status__c": "Booked",
+   "Application__c": "@Application__cRef2"
+  },
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef2"
+   },
+   "Appointment_Time__c": "2027-03-02T20:00:00.000+0000",
+   "Topic__c": "Career Services",
+   "Status__c": "Booked",
+   "Application__c": "@Application__cRef5"
+  },
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef3"
+   },
+   "Appointment_Time__c": "2026-11-10T14:00:00.000+0000",
+   "Topic__c": "Course Planning",
+   "Status__c": "Booked",
+   "Application__c": "@Application__cRef0"
+  },
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef4"
+   },
+   "Appointment_Time__c": "2027-02-28T19:00:00.000+0000",
+   "Topic__c": "Career Services",
+   "Status__c": "Cancelled",
+   "Application__c": "@Application__cRef0"
+  },
+  {
+   "attributes": {
+    "type": "Advising_Appointment__c",
+    "referenceId": "Advising_Appointment__cRef5"
+   },
+   "Appointment_Time__c": "2027-03-02T19:00:00.000+0000",
+   "Topic__c": "Career Services",
+   "Status__c": "Booked",
+   "Application__c": "@Application__cRef0"
+  }
+ ]
+}

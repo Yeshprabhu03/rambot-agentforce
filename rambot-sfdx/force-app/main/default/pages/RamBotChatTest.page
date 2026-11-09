@@ -1,0 +1,43 @@
+<apex:page showHeader="false" applyHtmlTag="false" applyBodyTag="false" lightningStylesheets="true">
+<html>
+<head>
+  <title>RamBot | Fordham Gabelli Graduate Admissions (demo)</title>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f7f3ee; color: #1d1d1f; }
+    header { background: #860038; color: #fff; padding: 24px 40px; }
+    header h1 { margin: 0; font-size: 28px; }
+    header p { margin: 6px 0 0; opacity: .85; }
+    main { padding: 32px 40px; max-width: 760px; line-height: 1.5; }
+    .note { background: #fff; border-left: 4px solid #860038; padding: 12px 16px; margin-top: 20px; }
+    .crisis { background: #eef5ff; border-left: 4px solid #2b6cb0; padding: 12px 16px; margin-top: 16px; font-size: 15px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Gabelli School of Business: Graduate Admissions</h1>
+    <p>RamBot demo page (portfolio project, not an official Fordham site)</p>
+  </header>
+  <main>
+    <p>Use the chat button in the lower right to talk to RamBot. Try asking which program fits you, what a program costs, when the next info session is, or about an application status (for example A-1003 with priya.shah@example.com).</p>
+    <div class="note">To test the human handoff, set yourself to "Available - Messaging" in the Omni-Channel utility of the Service Console first, then ask RamBot for a real person.</div>
+    <div class="crisis" role="note">If you are thinking about hurting yourself or are in crisis, you don't have to wait for a chatbot: call or text <strong>988</strong> (Suicide and Crisis Lifeline, US) any time, or call <strong>911</strong> if you are in immediate danger. Outside the US, contact your local emergency number.</div>
+  </main>
+  <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US';
+        embeddedservice_bootstrap.init(
+          '00Dbm000017ak5Y',
+          'RamBot_Web_Chat',
+          'https://orgfarm-74f758c996-dev-ed.develop.my.site.com/ESWRamBotWebCha1794095724605',
+          { scrt2URL: 'https://orgfarm-74f758c996-dev-ed.develop.my.salesforce-scrt.com' }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    };
+  </script>
+  <script type='text/javascript' src='https://orgfarm-74f758c996-dev-ed.develop.my.site.com/ESWRamBotWebCha1794095724605/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+</body>
+</html>
+</apex:page>

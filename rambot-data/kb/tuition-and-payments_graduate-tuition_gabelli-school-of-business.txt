@@ -1,0 +1,73 @@
+Title: Graduate Gabelli School of Business Tuition and Fees
+Source: https://www.fordham.edu/student-financial-services/tuition-and-payments/graduate-tuition/gabelli-school-of-business
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# Graduate Gabelli School of Business Tuition and Fees
+
+## 2025-2026 Academic Year Tuition
+Student Group | Rate (per | credit)Entrants Prior to Fall 2017 $1,878 Entrants Between Fall 2017 to Summer 2021 $1,932 Entrants Between Fall 2021 to Summer 2022 $2,008 Entrants Between Fall 2022 to Summer 2023 $2,176 Entrants From Fall 2023 and later $2,201 MS in Strategic Marketing Communications Online (Entrants Fall 2025 and Spring 2026) $1,676 -
+Student Group | Rate (per | credit)Entrants Prior to Fall 2017 $1,878 Entrants Between Fall 2017 to Summer 2021 $1,932 Entrants Between Fall 2021 to Summer 2022 $2,008 Entrants Between Fall 2022 to Summer 2023 $2,176 Entrants Starting Fall 2023 and later $2,201 -
+Flat Rate: $137,816 for five terms
+
+(Lincoln Center and Westchester campuses) -
+Entrant Year | Total Program Cost | Payment SchedulePrior to Fall 2024
+
+$124,500
+
+4 payments over 2 years
+
+Fall 2024 and later
+
+$129,107
+
+4 payments over 2 years
+
+## Fees
+Graduate School FeesGeneral Fee $122 (per term) Technology Fee $238 (per term) Health Insurance Fee Fall Term: $1,805
+
+Spring Term(Includes Summer): $3,189International Students Service Fee $48 Maintenance of Matriculation Fee $49 -
+These required
+
+one-time feescover a diverse portfolio of educational and developmental activities throughout the program to increase students' global market readiness and competitiveness. Through hands-on, applied-learning activities, students will gain skills and practice in areas such as leadership development, global knowledge and competency, personal presentation, and networking.Enrichment FeesFull-time MBA - (1st term of study only) $8,740 Part-time MBA - (1st term of study only) $4,850 Part-time MBA (2nd year of study only - traveling) $2,145 Part-time MBA (2nd year of study only - not traveling) $550 MS Strategic Marketing Communication - Online Students (1st term of study only) $2,185 MS Management - Online Students (1st term of study only) $2,185 MS Finance - Online Students (1st term of study only) $2,185 MS Programs - New Students (1st term of study only) $3,769
+
+We have projected a full Cost of Attendance for the 2025-2026 academic year, including an average of the additional expenses Fordham students may incur during the period of attendance. Please note, these numbers are just approximate values and do not represent the actual final cost.
+
+Students are liable for Health Insurance Fees for the Fall term at $1,805 and the Spring term at $3,189.
+
+Additionally, the Enrichment Fee varies between programs. Click the drop-down button above to see the specific charge assigned to your program.
+
+### {{page.rtmsg}}
+
+| Credits | Fall | Spring | Summer | Total |
+|---|---|---|---|---|
+| Number of Credits | {{credits_ttl()}} | |||
+| Direct Expenses (billed by Fordham) | Fall | Spring | Summer | Total |
+| {{direct.name}} ${{direct.default | number}} / {{direct.type}} |
+${{direct.fall | number}} | ${{direct.spring | number}} | ${{direct.summer | number}} | ${{direct.total | number}} |
+| Total Direct | ${{FullTotals.direct.fall | number}} | ${{FullTotals.direct.spring | number}} | ${{FullTotals.direct.summer | number}} | ${{FullTotals.direct.total | number}} |
+| Indirect Expenses (costs you may incur) | Fall | Spring | Summer | Total |
+| {{indirect.name}} ${{indirect.default | number}} / {{indirect.type}} |
+${{indirect.fall | number}} | ${{indirect.spring | number}} | ${{indirect.summer | number}} | ${{indirect.total | number}} |
+| Total Indirect | ${{FullTotals.indirect.fall | number}} | ${{FullTotals.indirect.spring | number}} | ${{FullTotals.indirect.summer | number}} | ${{FullTotals.indirect.total | number}} |
+| Grand Total | Fall | Spring | Summer | Total |
+| Grand Total | ${{FullTotals.full.fall | number}} | ${{FullTotals.full.spring | number}} | ${{FullTotals.full.summer | number}} | ${{FullTotals.full.total | number}} |
+
+Financial Aid[[email protected]](/cdn-cgi/l/email-protection#56303f383738353f373a373f3216303924323e373b78333223)
+
+718-817-3800Student Accounts[[email protected]](/cdn-cgi/l/email-protection#a3d0d7d6c7c6cdd7c2c0c0ccd6cdd7d0e3c5ccd1c7cbc2ce8dc6c7d6)
+
+718-817-4900Student Employment[[email protected]](/cdn-cgi/l/email-protection#6c1f181909011c0003152c0a031e08040d0142090819)
+
+718-817-3820
+
+Admissions
+
+General: [[email protected]](/cdn-cgi/l/email-protection#fe9b908c919292be98918c9a969f93d09b9a8b)
+
+International: [[email protected]](/cdn-cgi/l/email-protection#11787f6570757c786262787e7f51777e637579707c3f747564)
+
+Transfer Students: [[email protected]](/cdn-cgi/l/email-protection#fe8a8c9f908d989b8cbe98918c9a969f93d09b9a8b)
+
+Reach us virtually or in person
+
+You can now get face-to-face virtual assistance from our representatives, or you can walk into our on-campus locations.

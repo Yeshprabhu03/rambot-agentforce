@@ -1,0 +1,21 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "department" : {
+      "title" : "Department or Topic",
+      "description" : "Optional. A department or research topic such as Marketing, Finance or Data Science, used to list faculty in that area. Leave blank when looking up a specific person.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "facultyName" : {
+      "title" : "Faculty Name",
+      "description" : "Name of a Gabelli faculty member: full, first or last name, a nickname like Ben, or a misspelled name. Leave blank when listing faculty by department or topic. Do not include titles like Professor or Dr.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

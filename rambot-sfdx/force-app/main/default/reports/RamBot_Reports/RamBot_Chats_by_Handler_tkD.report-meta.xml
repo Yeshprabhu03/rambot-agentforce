@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>MessagingSession$Name</field>
+    </columns>
+    <columns>
+        <field>MessagingSession$Status</field>
+    </columns>
+    <columns>
+        <field>MessagingSession$CreatedDate</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>MessagingSession$Handled_By__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>RamBot Chats by Handler</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>RamBot_Messaging_Sessions__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>MessagingSession$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

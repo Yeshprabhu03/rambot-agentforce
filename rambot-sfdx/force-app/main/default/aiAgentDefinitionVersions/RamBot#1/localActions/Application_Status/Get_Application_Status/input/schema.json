@@ -1,0 +1,21 @@
+{
+  "required" : [ "applicationNumber", "studentEmail" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationNumber" : {
+      "title" : "applicationNumber",
+      "description" : "The application number, format A-####",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studentEmail" : {
+      "title" : "studentEmail",
+      "description" : "The email address the student applied with",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

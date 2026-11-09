@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>MessagingSession</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Web chat sessions for RamBot reporting.</description>
+    <label>RamBot Messaging Sessions</label>
+    <sections>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Name</field>
+            <table>MessagingSession</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Status</field>
+            <table>MessagingSession</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>CreatedDate</field>
+            <table>MessagingSession</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Handled_By__c</field>
+            <table>MessagingSession</table>
+        </columns>
+        <columns>
+            <checkedByDefault>true</checkedByDefault>
+            <field>Handoff_Summary__c</field>
+            <table>MessagingSession</table>
+        </columns>
+        <masterLabel>Messaging Sessions</masterLabel>
+    </sections>
+</ReportType>

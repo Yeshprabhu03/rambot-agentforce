@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiAgentDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <billingMode>ActionBased</billingMode>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Runtime condition evaluation for if statements</description>
+        <developerName>AgentScriptInternal_condition_1</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Runtime Condition 1</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>This variable may also be referred to as VerifiedCustomerId</description>
+        <developerName>VerifiedCustomerId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Verified Customer Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Multi-turn task in progress (Advising_Appointments, Info_Sessions or Prospective_Students); empty when none.</description>
+        <developerName>active_flow</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Active Flow</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Email address the student applied with.</description>
+        <developerName>application_email</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Application Email</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Application number the student gave, format A-####.</description>
+        <developerName>application_number</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Application Number</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the authentication key that&apos;s used to generate the verification code.</description>
+        <developerName>authenticationKey</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Authentication Key</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce user ID or contact ID.</description>
+        <developerName>customerId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Customer Id</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the customer ID type, whether it&apos;s a Salesforce user or a contact.</description>
+        <developerName>customerType</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Customer Type</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce Case ID created by an inbound email.</description>
+        <developerName>emailCaseId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Email Case Id</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores the Salesforce Contact ID associated with the end user who sent the inbound email.</description>
+        <developerName>endUserContactId</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>End User Contact Id</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>Stores email address of the end user who sent the inbound email.</description>
+        <developerName>endUserEmail</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>End User Email</label>
+        <visibility>External</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Number</dataType>
+        <description>Turns the student has spent in Escalation in this chat.</description>
+        <developerName>escalation_turns</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Escalation Turns</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Stores a boolean value that indicates whether the customer code is verified.</description>
+        <developerName>isVerified</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>isVerified</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>True once Get Application Status has run for the captured details.</description>
+        <developerName>status_checked</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Status Checked</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Boolean</dataType>
+        <description>Result of the last Get Application Status lookup.</description>
+        <developerName>status_found</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Status Found</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <copilotSecondaryLanguages>en_GB</copilotSecondaryLanguages>
+    <genAiPlannerName>RamBot_v14</genAiPlannerName>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <planner>
+        <fullName>RamBot_v14</fullName>
+        <agentGraphRef>20Zbm00000BzCkH</agentGraphRef>
+        <description>You help prospective and admitted Fordham Gabelli graduate business students check application status, book advising appointments, and reach a human advisor. You are a portfolio demo, not an official Fordham service. Be friendly, concise, and never guess facts that are not in a record or the knowledge library.</description>
+        <localTopicLinks>
+            <genAiPluginName>Advising_Appointments</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>Application_Status</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>Capabilities</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>Faculty_Directory</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>GeneralFAQ</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>Info_Sessions</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>Prospective_Students</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>agent_router</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>ambiguous_question</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>escalation</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>off_topic</genAiPluginName>
+        </localTopicLinks>
+        <localTopicLinks>
+            <genAiPluginName>topic_switch</genAiPluginName>
+        </localTopicLinks>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>An applicant with an application number who wants to book an advising meeting at a specific date and time. Not for prospective students who just want an admissions counselor to follow up or contact them, and not for complaints or problems.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyr</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyr</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Book_Advising_Appointment</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Books an advising appointment for a verified student. Use only after the student has confirmed the topic, date and time.</description>
+                <invocationTarget>Book_Advising_Appointment</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>true</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Book_Advising_Appointment</localDeveloperName>
+                <masterLabel>Book Advising Appointment</masterLabel>
+            </localActions>
+            <localDeveloperName>Advising_Appointments</localDeveloperName>
+            <masterLabel>Advising Appointments</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>The student wants to check the status of their application: whether it was received, under review, accepted or denied, the expected decision date, or which documents are still missing. Not for complaints, frustration, or requests to speak with a human.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQys</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQys</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Get_Application_Status</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Looks up a student&apos;s application after verifying the application number and email both match.</description>
+                <invocationTarget>Get_Application_Status</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Get_Application_Status</localDeveloperName>
+                <masterLabel>Get Application Status</masterLabel>
+            </localActions>
+            <localDeveloperName>Application_Status</localDeveloperName>
+            <masterLabel>Application Status</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Handles questions about what RamBot can do, its features, or how it can help — e.g. “what can you do”, “help”, “what are your features”, “what can I ask you”.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyy</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyy</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>Capabilities</localDeveloperName>
+            <masterLabel>Capabilities</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Questions about a specific Gabelli professor or faculty member: who they are, what they teach or research, their title, department, or background. Use when the user names a person.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyv</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyv</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Find_Faculty</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Finds Gabelli School faculty by name (full, first or last name, nicknames like Ben for Benjamin, small typos) or lists faculty in a department or research topic such as Marketing or Data Science. Returns title, department, research areas, education, bio and profile link.</description>
+                <invocationTarget>FacultyLookup</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Find_Faculty</localDeveloperName>
+                <masterLabel>Find Faculty</masterLabel>
+            </localActions>
+            <localDeveloperName>Faculty_Directory</localDeveloperName>
+            <masterLabel>Faculty Directory</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Questions about Gabelli School graduate programs, courses, curriculum, tuition, fees, scholarships, admissions requirements, deadlines, and career services.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyx</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyx</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>AnswerQuestionsWithKnowledge</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Answers questions about company policies and procedures, troubleshooting steps, or product information. For example: &apos;What is your return policy?&apos; &apos;How do I fix an issue?&apos; or &apos;What features does a product have?&apos;</description>
+                <invocationTarget>streamKnowledgeSearch</invocationTarget>
+                <invocationTargetType>standardInvocableAction</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+                <localDeveloperName>AnswerQuestionsWithKnowledge</localDeveloperName>
+                <masterLabel>Answer Questions with Knowledge</masterLabel>
+                <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+                <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+            </localActions>
+            <localDeveloperName>GeneralFAQ</localDeveloperName>
+            <masterLabel>Program Information</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>The student wants to attend or sign up for a Gabelli admissions information session, webinar, open house, campus visit, coffee chat or recruiting event (online, in New York, or abroad such as India or Vietnam), or asks when the next admissions event is.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyu</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyu</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Register_for_Info_Session</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Find_Info_Sessions</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Finds upcoming Gabelli graduate admissions information sessions, webinars and recruiting events, optionally for a program or location.</description>
+                <invocationTarget>InfoSessionFinder</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Find_Info_Sessions</localDeveloperName>
+                <masterLabel>Find Info Sessions</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Registers a prospective student for a Gabelli admissions event in Salesforce and saves them as a lead for the admissions team.</description>
+                <invocationTarget>InfoSessionRegistration</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Register_for_Info_Session</localDeveloperName>
+                <masterLabel>Register for Info Session</masterLabel>
+            </localActions>
+            <localDeveloperName>Info_Sessions</localDeveloperName>
+            <masterLabel>Info Sessions and Events</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Prospective students exploring which Gabelli graduate program fits their background and goals, comparing programs, asking which programs are STEM-designated or allow an F-1 visa, asking what a specific program will cost them in total, or asking an admissions counselor to follow up with them, contact them, or email them a summary. Not for the status of an application already submitted.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyz</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyz</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Estimate_Program_Cost</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Find_Sessions_For_Prospect</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Capture_Prospect_Interest</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Register_Prospect_For_Session</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Get_Program_Options</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Answer_Admissions_Questions</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Searches the Gabelli graduate admissions knowledge library for requirements, English tests, essays, deadlines, scholarships, international student rules and career outcomes.</description>
+                <invocationTarget>streamKnowledgeSearch</invocationTarget>
+                <invocationTargetType>standardInvocableAction</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>true</isIncludeInProgressIndicator>
+                <localDeveloperName>Answer_Admissions_Questions</localDeveloperName>
+                <masterLabel>Answer Admissions Questions</masterLabel>
+                <progressIndicatorMessage>Getting answers</progressIndicatorMessage>
+                <source>EmployeeCopilot__AnswerQuestionsWithKnowledge</source>
+            </localActions>
+            <localActions>
+                <description>Saves a prospective student as a lead for the Gabelli admissions team and optionally emails them a summary. Only call after the student agrees to share their name and email.</description>
+                <invocationTarget>ProspectLeadCapture</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Capture_Prospect_Interest</localDeveloperName>
+                <masterLabel>Capture Prospect Interest</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Calculates the 2026-27 cost of a Gabelli graduate program: tuition, fees, enrichment fee, and optionally international fees, health insurance and living costs.</description>
+                <invocationTarget>ProgramCostEstimator</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Estimate_Program_Cost</localDeveloperName>
+                <masterLabel>Estimate Program Cost</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Finds upcoming Gabelli graduate admissions information sessions, webinars and recruiting events, optionally for a program or location.</description>
+                <invocationTarget>InfoSessionFinder</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Find_Sessions_For_Prospect</localDeveloperName>
+                <masterLabel>Find Info Sessions</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Looks up Gabelli graduate programs with 2026-27 tuition, credits, length, format, start terms, STEM and F-1 visa eligibility, who each program suits and the next application deadline.</description>
+                <invocationTarget>ProgramCatalog</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Get_Program_Options</localDeveloperName>
+                <masterLabel>Get Program Options</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Registers a prospective student for a Gabelli admissions event in Salesforce and saves them as a lead for the admissions team.</description>
+                <invocationTarget>InfoSessionRegistration</invocationTarget>
+                <invocationTargetType>apex</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Register_Prospect_For_Session</localDeveloperName>
+                <masterLabel>Register for Info Session</masterLabel>
+            </localActions>
+            <localDeveloperName>Prospective_Students</localDeveloperName>
+            <masterLabel>Program Match and Cost</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Welcome the user and determine the appropriate subagent based on user input</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyt</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyt</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>agent_router</localDeveloperName>
+            <masterLabel>Agent Router</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Redirect conversation to relevant topics when user request is too ambiguous</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQz2</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQz2</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>ambiguous_question</localDeveloperName>
+            <masterLabel>Ambiguous Question</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>The student asks to speak with a human, an advisor, or a real person; is upset, angry, or frustrated; complains about a denied decision, delays, or unanswered emails; or has a problem no other subagent can solve. Use this subagent whenever the student asks for a human, even if they also mention their application.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQz0</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQz0</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>Save_Handoff_Summary</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Escalate_to_Advisor</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>Get_Application_Status</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Creates a support case so a human advisor follows up with the student.</description>
+                <invocationTarget>Escalate_to_Advisor</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Escalate_to_Advisor</localDeveloperName>
+                <masterLabel>Escalate to Advisor</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Looks up a student&apos;s application after verifying the application number and email both match.</description>
+                <invocationTarget>Get_Application_Status</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Get_Application_Status</localDeveloperName>
+                <masterLabel>Get Application Status</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Saves a short handoff summary onto the current chat record so the human advisor sees it first.</description>
+                <invocationTarget>Save_Handoff_Summary</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>Save_Handoff_Summary</localDeveloperName>
+                <masterLabel>Save Handoff Summary</masterLabel>
+            </localActions>
+            <localDeveloperName>escalation</localDeveloperName>
+            <masterLabel>Escalation</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Redirect conversation to relevant topics when user request goes off-topic</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQz1</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQz1</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>off_topic</localDeveloperName>
+            <masterLabel>Off Topic</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Internal: used when a student leaves a multi-turn task to ask about something else. Routes the new request like the Agent Router.</description>
+            <genAiPluginInstructions>
+                <description>You are RamBot, a friendly assistant for prospective and current graduate students at the Fordham Gabelli School of Business. Never claim that an action succeeded, or that a student&apos;s details were verified, unless the action actually returned a successful result. If a student asks a side question in the middle of a task such as booking an appointment, answer it, then offer to continue where you left off using the details already collected. Never repeat a student&apos;s email address, phone number or other personal details back to them in your replies; confirm with wording like &quot;we&apos;ll email you&quot; instead. Never include web links or URLs in replies; refer to pages by name, such as Fordham&apos;s Gabelli graduate admissions events page or the program page on fordham.edu.</description>
+                <developerName>instruction0_179bm000005IQyw</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179bm000005IQyw</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localDeveloperName>topic_switch</localDeveloperName>
+            <masterLabel>Topic Switch</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <masterLabel>RamBot</masterLabel>
+        <plannerSurfaces>
+            <adaptiveResponseAllowed>false</adaptiveResponseAllowed>
+            <callRecordingAllowed>false</callRecordingAllowed>
+            <outboundRouteConfigs>
+                <escalationMessage>One moment, I&apos;m transferring our conversation to get you more help.</escalationMessage>
+                <outboundRouteName>RamBot_Escalate_to_Advisors</outboundRouteName>
+                <outboundRouteType>OmniChannelFlow</outboundRouteType>
+            </outboundRouteConfigs>
+            <surface>SurfaceAction__Messaging</surface>
+            <surfaceType>Messaging</surfaceType>
+        </plannerSurfaces>
+        <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+    </planner>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <status>Inactive</status>
+    <stopRecPrompts>false</stopRecPrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+    <version>14</version>
+    <welcomeMessage>Hi, I&apos;m RamBot, the Gabelli graduate admissions assistant. I can help you find the right program, estimate your costs, sign up for an info session, or check on an application. How can I help?</welcomeMessage>
+</AiAgentDefinitionVersion>

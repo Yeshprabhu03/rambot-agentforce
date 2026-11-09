@@ -1,0 +1,102 @@
+{
+ "records": [
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef0"
+   },
+   "Student_Email__c": "arjun.mehta@example.com",
+   "Student_Name__c": "Arjun Mehta",
+   "Program__c": "MS Business Analytics",
+   "Term__c": "Fall 2027",
+   "Status__c": "Under Review",
+   "Decision_Date__c": "2027-03-15"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef1"
+   },
+   "Student_Email__c": "emily.carter@example.com",
+   "Student_Name__c": "Emily Carter",
+   "Program__c": "MBA Full-Time",
+   "Term__c": "Fall 2027",
+   "Status__c": "Interview Scheduled",
+   "Decision_Date__c": "2027-02-28"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef2"
+   },
+   "Student_Email__c": "priya.shah@example.com",
+   "Student_Name__c": "Priya Shah",
+   "Program__c": "MS Information Systems",
+   "Term__c": "Fall 2027",
+   "Status__c": "Incomplete",
+   "Missing_Items__c": "Official transcript; second letter of recommendation",
+   "Decision_Date__c": "2027-04-01"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef3"
+   },
+   "Student_Email__c": "daniel.okafor@example.com",
+   "Student_Name__c": "Daniel Okafor",
+   "Program__c": "MS Finance",
+   "Term__c": "Spring 2027",
+   "Status__c": "Admitted",
+   "Decision_Date__c": "2026-11-20"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef4"
+   },
+   "Student_Email__c": "sofia.rossi@example.com",
+   "Student_Name__c": "Sofia Rossi",
+   "Program__c": "MBA Full-Time",
+   "Term__c": "Fall 2027",
+   "Status__c": "Submitted",
+   "Decision_Date__c": "2027-03-31"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef5"
+   },
+   "Student_Email__c": "kevin.liu@example.com",
+   "Student_Name__c": "Kevin Liu",
+   "Program__c": "MS Business Analytics",
+   "Term__c": "Spring 2027",
+   "Status__c": "Waitlisted",
+   "Decision_Date__c": "2026-11-30"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef6"
+   },
+   "Student_Email__c": "hannah.brooks@example.com",
+   "Student_Name__c": "Hannah Brooks",
+   "Program__c": "MS Finance",
+   "Term__c": "Fall 2027",
+   "Status__c": "Incomplete",
+   "Missing_Items__c": "GMAT or GRE score report",
+   "Decision_Date__c": "2027-04-01"
+  },
+  {
+   "attributes": {
+    "type": "Application__c",
+    "referenceId": "Application__cRef7"
+   },
+   "Student_Email__c": "marcus.reyes@example.com",
+   "Student_Name__c": "Marcus Reyes",
+   "Program__c": "MS Information Systems",
+   "Term__c": "Spring 2027",
+   "Status__c": "Under Review",
+   "Decision_Date__c": "2026-12-10"
+  }
+ ]
+}

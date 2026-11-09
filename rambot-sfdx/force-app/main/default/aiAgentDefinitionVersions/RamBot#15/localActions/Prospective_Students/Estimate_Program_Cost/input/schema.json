@@ -1,0 +1,35 @@
+{
+  "required" : [ "program" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "includeLivingCosts" : {
+      "title" : "Include Living Costs",
+      "description" : "Optional: true to add estimated food, housing, books, transport and personal costs.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "isInternational" : {
+      "title" : "International Student",
+      "description" : "Optional: true if the student will study on an F-1 visa.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "program" : {
+      "title" : "Program",
+      "description" : "Program name or code, e.g. MS in Business Analytics or MSBA.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studyMode" : {
+      "title" : "Study Mode",
+      "description" : "Optional: Full-time or Part-time. Use Part-time when the student says they will study part-time or keep working; leave blank for full-time.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

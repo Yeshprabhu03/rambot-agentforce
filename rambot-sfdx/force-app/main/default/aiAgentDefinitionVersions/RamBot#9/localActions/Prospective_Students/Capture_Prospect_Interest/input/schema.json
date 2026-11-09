@@ -1,0 +1,70 @@
+{
+  "required" : [ "firstName", "lastName", "email" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "country" : {
+      "title" : "Country",
+      "description" : "Optional: country the student lives in.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "email" : {
+      "title" : "Email",
+      "description" : "Student email address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "firstName" : {
+      "title" : "First Name",
+      "description" : "Student first name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "intendedTerm" : {
+      "title" : "Intended Term",
+      "description" : "When they want to start, e.g. Fall 2027.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "isInternational" : {
+      "title" : "International Student",
+      "description" : "Optional: true if the student will need an F-1 visa.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "lastName" : {
+      "title" : "Last Name",
+      "description" : "Student last name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "notes" : {
+      "title" : "Conversation Notes",
+      "description" : "2-4 sentences for the admissions counselor: background, goals, questions asked and what was recommended.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "programInterest" : {
+      "title" : "Program Interest",
+      "description" : "Program or programs the student is interested in.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "sendEmailSummary" : {
+      "title" : "Send Email Summary",
+      "description" : "Optional: true to email the student a summary of their program(s) of interest, deadlines and next steps, built from Fordham program records.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

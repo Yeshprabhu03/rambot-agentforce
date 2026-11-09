@@ -1,0 +1,118 @@
+{
+ "records": [
+  {
+   "attributes": {
+    "type": "Lead",
+    "referenceId": "L0"
+   },
+   "FirstName": "Priya",
+   "LastName": "Nair",
+   "Email": "priya.nair.test@example.com",
+   "Company": "Prospective Student",
+   "LeadSource": "RamBot Web Chat",
+   "Status": "Open - Not Contacted",
+   "Program_Interest__c": "MS in Finance",
+   "Description": "RamBot 2026-11-06 15:02: Registered for QS Discover Masters & MBA - Bangalore on 2026-12-09.",
+   "Is_International__c": false,
+   "CampaignMembers": {
+    "records": [
+     {
+      "attributes": {
+       "type": "CampaignMember",
+       "referenceId": "CM0_0"
+      },
+      "CampaignId": "701bm00003FwqRMAAZ",
+      "Status": "Responded"
+     }
+    ]
+   }
+  },
+  {
+   "attributes": {
+    "type": "Lead",
+    "referenceId": "L1"
+   },
+   "FirstName": "Arjun",
+   "LastName": "Rao",
+   "Email": "arjun.rao.test@example.com",
+   "Company": "Prospective Student",
+   "LeadSource": "RamBot Web Chat",
+   "Status": "Open - Not Contacted",
+   "Program_Interest__c": "MS in Business Analytics",
+   "Intended_Term__c": "Fall 2027",
+   "Description": "RamBot 2026-11-06 14:57: Arjun is an engineer in India with 2 years of experience, aiming to move into data and AI roles in the US. He is interested in the MS in Business Analytics for Fall 2027 and will need an F-1 visa. He requested a detailed cost estimate including living costs and wants a counselor to follow up and receive an email summary.",
+   "Is_International__c": true
+  },
+  {
+   "attributes": {
+    "type": "Lead",
+    "referenceId": "L2"
+   },
+   "FirstName": "Priya",
+   "LastName": "Shah",
+   "Email": "priya.shah@example.com",
+   "Company": "Prospective Student",
+   "LeadSource": "RamBot Web Chat",
+   "Status": "Open - Not Contacted",
+   "Program_Interest__c": "MS in Information Systems",
+   "Intended_Term__c": "Fall 2027",
+   "Description": "RamBot 2026-11-06 17:23: Priya is interested in the MS in Finance for Fall 2027. She requested a counselor follow-up. Please provide program details, deadlines, and next steps.\nExisting applicant: A-1003 (MS Information Systems, Incomplete)\nRamBot 2026-11-07 11:13: Priya Shah requested to be contacted by a counselor about the MS in Information Systems for Fall 2027. She wants to learn more about the program and next steps.\nRamBot 2026-11-07 11:31: Priya requested a counselor contact her about the MS in Information Systems for Fall 2027. She is interested in learning more about the program and next steps.\nRamBot 2026-11-07 11:44: Priya Shah requested to be contacted about the MS in Information Systems for Fall 2027. She is interested in program details and a counselor follow-up.\nRamBot 2026-11-07 11:50: Priya Shah requested to be contacted by a counselor about the MS in Information Systems for Fall 2027. She is interested in learning more about the program and next steps.",
+   "Is_International__c": false
+  },
+  {
+   "attributes": {
+    "type": "Lead",
+    "referenceId": "L3"
+   },
+   "FirstName": "Rohan",
+   "LastName": "Mehta",
+   "Email": "rohan.mehta.test@example.com",
+   "Company": "Prospective Student",
+   "LeadSource": "RamBot Web Chat",
+   "Status": "Open - Not Contacted",
+   "Program_Interest__c": "MS in Business Analytics",
+   "Intended_Term__c": "Fall 2027",
+   "Description": "RamBot 2026-11-06 15:37: Rohan is a software engineer from India with 2 years of experience, aiming to move into data and AI roles in the US. He is interested in the MS in Business Analytics, needs an F-1 visa, and requested a total cost estimate (including living costs). Wants a counselor to follow up and a summary emailed.\nRamBot 2026-11-06 15:54: Registered for Application Insights: MS in Business Analytics and MS in Information Technology on 2026-11-10.\nRamBot 2026-11-06 16:04: Registered for Application Insights: MS in Business Analytics and MS in Information Technology on 2026-11-10.\nRamBot 2026-11-06 16:08: Software engineer in India with 2 years of experience, seeking data and AI roles in the US. Interested in the MS in Business Analytics for Fall 2027. Needs F-1 visa. Requested info session registration, counselor follow-up, and email summary.\nRamBot 2026-11-06 16:08: Registered for Application Insights: MS in Business Analytics and MS in Information Technology on 2026-11-10.",
+   "Is_International__c": true,
+   "CampaignMembers": {
+    "records": [
+     {
+      "attributes": {
+       "type": "CampaignMember",
+       "referenceId": "CM3_0"
+      },
+      "CampaignId": "701bm00003FwqQyAAJ",
+      "Status": "Responded"
+     }
+    ]
+   }
+  },
+  {
+   "attributes": {
+    "type": "Lead",
+    "referenceId": "L4"
+   },
+   "FirstName": "Hannah",
+   "LastName": "Brooks",
+   "Email": "hannah.brooks@example.com",
+   "Company": "Prospective Student",
+   "LeadSource": "RamBot Web Chat",
+   "Status": "Open - Not Contacted",
+   "Program_Interest__c": "Business Analytics",
+   "Description": "RamBot 2026-11-06 17:35: Registered for Application Insights: MS in Business Analytics and MS in Information Technology on 2026-12-10.\nExisting applicant: A-1007 (MS Finance, Incomplete)",
+   "Is_International__c": false,
+   "CampaignMembers": {
+    "records": [
+     {
+      "attributes": {
+       "type": "CampaignMember",
+       "referenceId": "CM4_0"
+      },
+      "CampaignId": "701bm00003FwqQyAAJ",
+      "Status": "Responded"
+     }
+    ]
+   }
+  }
+ ]
+}

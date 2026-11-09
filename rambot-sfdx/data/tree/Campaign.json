@@ -1,0 +1,788 @@
+{
+ "records": [
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef0"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-10",
+   "EndDate": "2026-11-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef1"
+   },
+   "Name": "Application Insights: MS in Media Management Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-10",
+   "EndDate": "2026-11-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Media Management"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef2"
+   },
+   "Name": "Application Insights: FTMBA Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-11",
+   "EndDate": "2026-11-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "FTMBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef3"
+   },
+   "Name": "Application Insights: MS in Quantitative Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-11",
+   "EndDate": "2026-11-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Quantitative Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef4"
+   },
+   "Name": "Application Insights: MSSMC Online Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-11",
+   "EndDate": "2026-11-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MSSMC Online"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef5"
+   },
+   "Name": "Application Insights: MS in Accounting Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-11",
+   "EndDate": "2026-11-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Accounting"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef6"
+   },
+   "Name": "Application Insights: Part-Time MBA Programs Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-11",
+   "EndDate": "2026-11-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "1:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "Part-Time MBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef7"
+   },
+   "Name": "Application Insights: MS in Artificial Intelligence in Business",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-12",
+   "EndDate": "2026-11-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Artificial Intelligence in Business"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef8"
+   },
+   "Name": "Application Insights: MS in Management (MiM) Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-12",
+   "EndDate": "2026-11-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Management (MiM)"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef9"
+   },
+   "Name": "Application Insights: MS in Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-12",
+   "EndDate": "2026-11-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "10:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef10"
+   },
+   "Name": "Application Insights: MS in Marketing Intelligence and MS Business Analytics Pro",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-12",
+   "EndDate": "2026-11-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "10:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Marketing Intelligence and MS Business Analytics"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef11"
+   },
+   "Name": "Application Insights: MS Finance Online Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-12",
+   "EndDate": "2026-11-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "11:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS Finance Online"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef12"
+   },
+   "Name": "Application Insights: FTMBA Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-03",
+   "EndDate": "2026-12-03",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "FTMBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef13"
+   },
+   "Name": "Application Insights: MS in Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-08",
+   "EndDate": "2026-12-08",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef14"
+   },
+   "Name": "Application Insights: MS in Marketing Intelligence and MS Business Analytics Pro",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-09",
+   "EndDate": "2026-12-09",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Marketing Intelligence and MS Business Analytics"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef15"
+   },
+   "Name": "Application Insights: MS in Accounting Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-10",
+   "EndDate": "2026-12-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Accounting"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef16"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-10",
+   "EndDate": "2026-12-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef17"
+   },
+   "Name": "Application Insights: MS in Artificial Intelligence in Business",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-11",
+   "EndDate": "2026-12-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Artificial Intelligence in Business"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef18"
+   },
+   "Name": "Application Insights: MS in Quantitative Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-11",
+   "EndDate": "2026-12-11",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Quantitative Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef19"
+   },
+   "Name": "Application Insights: MS in Marketing Intelligence / Media Management / Strategi",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-16",
+   "EndDate": "2026-12-16",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Marketing Intelligence / Media Management / Strategic Marketing Communications"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef20"
+   },
+   "Name": "Application Insights: FTMBA Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-07",
+   "EndDate": "2027-01-07",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "FTMBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef21"
+   },
+   "Name": "Application Insights: MS in Marketing Intelligence and MS Business Analytics Pro",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-19",
+   "EndDate": "2027-01-19",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Marketing Intelligence and MS Business Analytics"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef22"
+   },
+   "Name": "Application Insights: MS in Accounting Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-20",
+   "EndDate": "2027-01-20",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Accounting"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef23"
+   },
+   "Name": "Application Insights: MS in Media Management Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-20",
+   "EndDate": "2027-01-20",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Media Management"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef24"
+   },
+   "Name": "Application Insights: MSSMC Online Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-20",
+   "EndDate": "2027-01-20",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "12:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MSSMC Online"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef25"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-21",
+   "EndDate": "2027-01-21",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef26"
+   },
+   "Name": "Application Insights: MS in Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-21",
+   "EndDate": "2027-01-21",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef27"
+   },
+   "Name": "Application Insights: MS Finance Online Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-21",
+   "EndDate": "2027-01-21",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "12:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS Finance Online"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef28"
+   },
+   "Name": "Application Insights: MS in Management (MiM) Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-22",
+   "EndDate": "2027-01-22",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Management (MiM)"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef29"
+   },
+   "Name": "Application Insights: MS in Artificial Intelligence in Business",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-22",
+   "EndDate": "2027-01-22",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Artificial Intelligence in Business"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef30"
+   },
+   "Name": "Application Insights: MS in Quantitative Finance Program Overview",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-22",
+   "EndDate": "2027-01-22",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Quantitative Finance"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef31"
+   },
+   "Name": "On-the-Spot Admissions Day (Virtual)",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-18",
+   "EndDate": "2026-11-18",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:00 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "All programs"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef32"
+   },
+   "Name": "Ready to Pivot? Finding the Right Fit with Gabelli's Professional MBA and Execut",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-14",
+   "EndDate": "2026-12-14",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "12:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "Professional MBA; Executive MBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef33"
+   },
+   "Name": "MBA with a Family? Balancing Work, Life, and Your Goals in the Professional MBA",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-06",
+   "EndDate": "2027-01-06",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "12:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "Professional MBA; Executive MBA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef34"
+   },
+   "Name": "Premier EMBA: Executive MBA Event New York City",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-21",
+   "EndDate": "2026-11-21",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "5:45 PM (New York)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "Executive MBA; New York City, New York, USA"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef35"
+   },
+   "Name": "QS Discover Masters - Dhaka",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-30",
+   "EndDate": "2026-11-30",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "5:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Dhaka, Bangladesh"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef36"
+   },
+   "Name": "QS Discover Masters - Kolkata",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-02",
+   "EndDate": "2026-12-02",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "5:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Kolkata, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef37"
+   },
+   "Name": "QS Discover Masters & MBA - New Delhi",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-03",
+   "EndDate": "2026-12-03",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "2:30 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS and MBA programs; New Delhi, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef38"
+   },
+   "Name": "QS Discover Masters & MBA - Mumbai",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-05",
+   "EndDate": "2026-12-05",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "10:30 AM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS and MBA programs; Mumbai, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef39"
+   },
+   "Name": "QS Discover Masters - Ahmedabad",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-07",
+   "EndDate": "2026-12-07",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "5:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Ahmedabad, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef40"
+   },
+   "Name": "QS Discover Masters & MBA - Bangalore",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-09",
+   "EndDate": "2026-12-09",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "2:30 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS and MBA programs; Bangalore, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef41"
+   },
+   "Name": "QS Discover Masters - Hyderabad",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-12",
+   "EndDate": "2026-12-12",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "1:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Hyderabad, India"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef42"
+   },
+   "Name": "Access MBA: One-to-One MBA Event - Manila",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-10",
+   "EndDate": "2026-11-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "4:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MBA programs; Manila, Philippines"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef43"
+   },
+   "Name": "QS Discover Masters - Ho Chi Minh City",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-07",
+   "EndDate": "2026-11-07",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "1:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Ho Chi Minh City, Vietnam"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef44"
+   },
+   "Name": "QS Discover Masters - Hanoi",
+   "Type": "Seminar / Conference",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-08",
+   "EndDate": "2026-11-08",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Event_Time__c": "1:00 PM (local time)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/discovergabelli",
+   "Program_Focus__c": "MS programs; Hanoi, Vietnam"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef45"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-11-10",
+   "EndDate": "2026-11-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef46"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2026-12-10",
+   "EndDate": "2026-12-10",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef47"
+   },
+   "Name": "Application Insights: MS in Business Analytics and MS in Information Technology",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-21",
+   "EndDate": "2027-01-21",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "9:30 AM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "MS in Business Analytics and MS in Information Technology"
+  },
+  {
+   "attributes": {
+    "type": "Campaign",
+    "referenceId": "CampaignRef48"
+   },
+   "Name": "MBA with a Family? Balancing Work, Life, and Your Goals in the Professional MBA",
+   "Type": "Webinar",
+   "Status": "Planned",
+   "IsActive": true,
+   "StartDate": "2027-01-06",
+   "EndDate": "2027-01-06",
+   "Description": "Gabelli School graduate admissions event. Register on Fordham's admissions portal: https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Event_Time__c": "12:00 PM ET (online)",
+   "Registration_URL__c": "https://gradadmissions.fordham.edu/portal/DiscoverGabelli-VirtualEvents",
+   "Program_Focus__c": "Professional MBA; Executive MBA"
+  }
+ ]
+}

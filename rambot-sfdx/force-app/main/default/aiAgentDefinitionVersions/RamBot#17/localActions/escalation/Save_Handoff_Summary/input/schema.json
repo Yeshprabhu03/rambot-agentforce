@@ -1,0 +1,21 @@
+{
+  "required" : [ "messagingSessionId", "summary" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "messagingSessionId" : {
+      "title" : "messagingSessionId",
+      "description" : "The ID of the current messaging session.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "summary" : {
+      "title" : "summary",
+      "description" : "Under 250 characters: the student's issue, what RamBot already answered or checked, and what the student needs from the advisor.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

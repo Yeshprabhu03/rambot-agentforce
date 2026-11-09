@@ -1,0 +1,42 @@
+Title: Master's (M.S.) in Artificial Intelligence in Business
+Source: https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/graduate-programs/academic-programs/ms-programs/artificial-intelligence-in-business
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# Master's (M.S.) in Artificial Intelligence in Business
+
+## AI and Machine Learning for the Future
+
+From customer service operations to research and development, marketing and sales, to software engineering, Generative AI and Machine Learning are changing the way we do business. The fields of banking and financial services, information technology, healthcare, management, human resources, and consulting services among others will feel the impact of AI and be forever changed by it.
+
+To meet the rapidly evolving needs of industry, Fordham University’s Gabelli School of Business is launching the NEW 30-credit,  | STEM Designated  | Master of Science in Artificial Intelligence in Business that is designed to prepare the next generation of business professionals to provide innovative leadership in adopting, managing, and applying AI for business across the organizational functions. It’s perfect for both early adopters of AI across business functions within their companies, organizations or consulting practices, as well as IT pros who wish to gain AI expertise.
+
+From its four foundational courses in Artificial Intelligence, Machine Learning for Business, Quantitative Foundations in AI, and Law and Ethics of AI to a wealth of electives, you'll be prepared for the AI business jobs of the future.
+
+Two optional tracks are available—Finance Industry Track and Technical Track
+
+View M.S. in Artificial Intelligence in Business Curriculum
+
+SCHOLARSHIPS AVAILABLE FOR THOSE WHO QUALIFY
+
+### Gain the Gabelli School Advantage
+
+- Study in New York City, the business capital of the world, and the leader nationwide in new, early stage startups
+- Attend Classes held at Fordham University’s Lincoln Center Manhattan campus—minutes from Wall Street, NYSE and NASDAQ
+- Full- and part-time study options available to meet the needs of working professionals;
+complete the degree in just three semesters of full-time study - Benefit from unsurpassed networking opportunities through a broad array of industry focused events and site visits
+- Gain experience through internships at top NYC-based financial firms
+- Reduce the cost of your education through merit-based scholarships for those who qualify
+- GMAT/GRE Optional, however a good score can increase your chances of being admitted
+- STEM Designated -
+Students who earn a degree in select U.S. government-designated STEM programs may be eligible to apply for a 24-month STEM OPT extension.
+
+#### Ideal For
+
+Recent college graduates, as well as early-career professionals who want to harness the power of the new and emerging AI tools and technologies that will revolutionize the ways we do business. Perfect for those who envision themselves at the intersection of business and technological innovation, and who are ready to lead their organizations into the future.
+
+### Frequently Asked Questions
+Artificial Intelligence and machine learning are related concepts but they are different. AI usually refers to a broader concept that includes but is not limited to machine learning. It also includes areas of natural language processing, robotics, and rule-based expert systems. Machine learning is a subcategory of AI that focuses on building models that learn from historical data. It is a primary approach to achieve AI.
+We believe that AI will enhance all aspects of business and offer a variety of tracks including finance, consulting, and technology. Example of the types of jobs this degree can prepare you for include: AI strategist, AI integration specialist, Generative AI specialist, AI content manager, financial analyst (AI), financial engineer (AI), AI algorithm trader, AI architect, AI engineer, AI data scientist, machine learning engineer, (AI-driven) business analyst, business intelligence engineer, and AI-product manager, among others.
+This MSAIB degree focuses on application-driven AI. Traditional Artificial Intelligence degrees are often offered in a Computer Science or Computer Engineering department, where the focus is on model and algorithm development. Based in the Gabelli School of Business, this degree will offer students essential technical skills as well as applied and managerial aspects of the technology. It also offers an opportunity for students to specialize in certain fields of applications such as finance.
+The integration of AI and Business is a major trend today. It enhances a business’ competitive advantage in many ways including: improved data-driven decision-making process, improved operational efficiency, enhanced innovation process, better customer service, faster and more accurate market analysis, and more efficient supply chain management.
+From predictive AI to generative AI, we have seen many AI tools being implemented in business. On the predictive AI side, tools for fraud detection, automatic trading, sentiment analysis, and sales forecasting are widely used. Many generic tools are provided such as Amazon SageMaker, Tableau, IBM Watson, Microsoft Azure, Google Cloud, among others. On the generative AI side, tools such as OpenAI, Copilot, Midjourney, and customized local GPTs are popular.

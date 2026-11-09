@@ -1,0 +1,50 @@
+Title: Master’s (M.S.) in Business Analytics (STEM)
+Source: https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/graduate-programs/academic-programs/ms-programs/business-analytics
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# Master’s (M.S.) in Business Analytics (STEM)
+
+As business becomes more global, data driven, and complex than ever before, the demand for professionals with deep business analytics skills is on the rise. From utilizing datamining to understand consumer behavior and market trends, to employing predictive analytics in forecasting sales and revenue generation, to harnessing the power of artificial intelligence to inform data-driven decision making, those with business analytics expertise can turn critical information into a competitive advantage.Fordham University’s Gabelli School of Business  | STEM designated, 30-credit M.S. in Business Analytics (MSBA) provides the business analytics tools and knowledge you need for a career that spans across industries and business functions, making you an invaluable member of a business team and/or preparing you for highly lucrative consulting roles. Submission of GMAT/GRE test scores is optional.
+
+This AACSB-accredited business analytics graduate degree provides the skill sets that make you most marketable.  Choose from four tracks:
+
+- Artificial Intelligence and Deep Learning
+- Business Analytics
+- Programming for Analytics and Data Science
+- Statistical Analytics for Business
+
+## M.S. in Business Analytics Highlights
+
+- Study in NYC, the business capital of the world, at Fordham University’s Lincoln Center Manhattan campus—minutes from Wall Street, NYSE, and NASDAQ
+- Complete your degree in as little as 12 months of full-time study or complete it part-time
+Learn from faculty memberswho are top industry experts- Benefit from outstanding academic and career advising through our
+Student Success Center Network through industry focused activities, workshops, panels and site visits- Gain experience through internships at top NYC-based firms, agencies, and organizations
+- Reduce the cost of your education through merit-based scholarships for those who qualify
+- STEM Designated -
+students who earn a degree in select U.S. government-designated STEM programs may be eligible to apply for a 24-month STEM OPT extension. - Pursue a joint MSBA
+-MSIT degree - Earn a
+Responsible Business Leadership Certification
+
+IDEAL FOR:Early professionals  who are just starting out and seek to gain in-demand business analytics skills that will prepare them for the rapidly evolving job market and new and emerging career opportunities. Experienced professionals who seek to advance in their careers by acquiring the business analytics insights that will increase their professional options and enhance their résumé.
+
+Alumni Success is Our Success 
+
+M.S. in Business Analytics Advantage
+
+#### Connections to Industry, Internships, and Jobs
+
+Because of our location in New York City the M.S. in Business Analytics is closely tied to industry—from the faculty members who teach our courses, to our connections to the businesses and recruiters that hire our students. Paid and unpaid internships are available (for those who qualify) that provide the hands-on knowledge and skill sets hiring managers seek. Our graduates go on to jobs at top firms in the U.S. and in their home countries. Learn More About Career Paths and Industry Partners.
+
+#### Curriculum That Prepares You for the Future of Business
+
+M.S. in Business Analytics curriculum is constantly being evaluated and updated to ensure that what you are learning in the classroom is relevant and immediately applicable in the workplace. From core courses in Database Management and SQL, Machine Learning for Business, Web Analytics and Cloud Computing for Analytics to electives in cutting-edge topics such as Blockchain Tech & App Dev, Digital Forensics, Computational Finance, Artificial Intelligence, and Sports Analytics, you’ll have the knowledge and global skill sets to succeed across industries and around the world.
+
+#### A Global and Highly Supportive Alumni Network
+
+The Gabelli School of Business Alumni Network is 45,000+ strong. Our alumni live and work in cities around the world and are deeply committed to helping those just starting out in the field, and engaging with those students who are more seasoned in their professional experience. From mentorship, to serving on panels and as guest lecturers, to providing networking experiences and positions in their companies and organizations—they offer truly transformational insights and opportunities for our students.
+
+Frequently Asked Questions 
+Business analytics and data science both deal with structured and unstructured data and aim to provide data-driven solutions. They both heavily use statistical and machine learning models. While these two terms overlap in meaning and are sometimes used exchangeably, they have different emphases. Business analytics often emphasizes providing business insights and storytelling by using statistical, machine learning models, and visualization, which requires communication skills to translate a business problem into the context of data science. Data science has a stronger emphasis on training, testing, and tuning machine learning models in general.
+Salary depends upon the industry and position. Starting base salaries are between 75K to 150K. Bonus and stock varies.
+Digital forensics is one of the important application topics in business analytics. Many digital forensics topics such as detecting bank fraud and social media scams utilize machine learning and statistical models. Business analytics is generic by nature and can apply to many domains including forensic science.
+Business intelligence (BI) often refers to the general tools and infrastructure within a company that provides comprehensive metrics of business performances. Many BI tools utilize business analytics models and techniques. Business analytics is more recent and more inclusive in terms of methodology (machine learning, statistics, and visualization) and uses both internal and external company data (such as social media data).

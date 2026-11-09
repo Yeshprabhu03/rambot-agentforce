@@ -1,0 +1,16 @@
+# Only the RamBot project is tracked; interview notes in this folder stay local.
+/*
+!/.gitignore
+!/README.md
+!/rambot-sfdx/
+!/rambot-apex/
+!/rambot-data/
+!/rambot_progress_log.md
+!/rambot_new_org_plan.md
+!/demo_rambot_agentforce.md
+
+# Local Salesforce CLI state (auth, preview sessions, traces)
+.sfdx/
+.sf/
+.DS_Store
+node_modules/

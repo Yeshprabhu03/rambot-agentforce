@@ -1,0 +1,50 @@
+Title: Master’s (M.S.) in Information Technology (STEM)
+Source: https://www.fordham.edu/gabelli-school-of-business/academic-programs-and-admissions/graduate-programs/academic-programs/ms-programs/information-technology
+Portfolio demo copy of a public Fordham Gabelli web page.
+
+# Master’s (M.S.) in Information Technology (STEM)
+
+There is no field experiencing greater change and disruption than information technology. With this technological revolution comes incredible opportunities for careers across a wide range of new specialties—from cloud and edge computing and applied AI, to blockchain, fintech, and business analytics—all of which are transforming the way we do business. Those who acquire the knowledge and skills that prepare them for what comes next, will be at the greatest advantage to secure leadership roles in fields that offer truly limitless options for career growth and success. Fordham University’s Gabelli School of Business  | STEM designated, 30-credit M.S. in Information Technology (MSIT) provides the unique combination of IT tools, managerial skills, and focus on innovation that opens the doors to the future of business technology and diverse IT jobs. Our students gain the technical proficiencies and insights that are immediately applicable and globally focused for careers across industries and around the world.
+
+This AACSB-accredited information technology graduate degree provides the skill sets that make you most marketable.  Choose from four tracks:
+
+- Business Analytics
+- Cybersecurity
+- Digital Transformation
+- Enterprise Computing
+
+## M.S. in Information Technology Highlights
+
+- Study in NYC, a major tech startup hub and the second most successful tech market in the world after Silicon Valley.
+- Complete your degree in as little as 12 months of full-time study or complete it part-time
+Learn from faculty memberswho are top industry experts- Benefit from outstanding academic and career advising through our
+Student Success Center Network through industry focused activities, workshops, panels, and site visits- Gain experience through internships at top NYC-based tech firms and start-ups
+- Reduce the cost of your education through merit-based scholarships (for those who qualify)
+- STEM Designated - students who earn a degree in select U.S. government-designated STEM programs may be eligible to apply for a 24-month STEM OPT extension
+- Pursue a joint MSBA-MSIT degree
+- Earn a
+Responsible Business Leadership Certification
+
+IDEAL FOR:Early professionals who are just starting out and who seek to gain the business-focused information technology knowledge and skills that will prepare them for emerging career opportunities in corporations, startups, or self-owned entrepreneurial ventures around the world. Experienced professionals who seek to advance in their careers by supplementing their current knowledge of IT with new, cutting-edge skills that will prepare them for the AI- and data-driven information technology revolution ahead.
+
+Alumni Success is Our Success 
+
+M.S. in Information Technology Advantage
+
+#### Connections to Industry, Internships, and Jobs
+
+New York City has a booming tech industry and is home to a staggering number of tech companies —from Warner Bros. Discovery, a premier global media and entertainment company, to DraftKings, an international digital sports entertainment and technology company, to fintech companies like Alloy and MorningStar. Because of its mix of industries, corporate AI Labs, and academic research facilities, the City also is an emerging AI startup hub. M.S. in Information Technology students can take advantage of paid and unpaid internships at companies and start-ups across the City (for those who qualify) that provide the hands-on knowledge and skill sets hiring managers seek. Our graduates go on to jobs at top firms in the U.S. and in their home countries. Learn More About Career Paths and Industry Partners.
+
+#### Curriculum That Prepares You for the Future of Technology
+
+M.S. in Information Technology curriculum is constantly being evaluated and updated to ensure that what you are learning in the classroom is relevant and immediately applicable in the workplace. From core courses in Systems Analysis, Database Management, Project Management, and Web Applications Development to electives in cutting-edge topics such as Artificial Intelligence, Blockchain Tech & App Dev, Programming with Python, Mobile E-Commerce and Apps, Data Warehousing, and R Statistical Programming, you can create a flexible course of study that will prepare you to seize the opportunities ahead.
+
+#### A Global and Highly Supportive Alumni Network
+
+The Gabelli School of Business Alumni Network is 45,000+ strong. Our alumni live and work in cities around the world and are deeply committed to helping those just starting out in the field, and engaging with those students who are more seasoned in their professional experience. From mentorship, to serving on panels and as guest lecturers, to providing networking experiences and positions in their companies and organizations—they provide truly transformational insights and opportunities for our students.
+
+Frequently Asked Questions 
+The M.S. in Information Technology provides early and seasoned profession with the knowledge and skills to transform companies and organizations for which they work, digitally. The degree covers a wide range of IT related topics that include IT management, systems integration, data analytics, networks, cybersecurity, and IT project management. It requires students to have both technical skills and business and managerial skills, and it is more applied and more business oriented. Master’s in computer science programs, in contrast, study the technical and theoretical aspects of computing that focus on algorithms, data structures, and programming languages.
+Continued learning and adaptability is a must for IT professionals. There are a few recent trends related to changes in IT jobs and IT career paths: 1) rise of remote work, 2) increased focus on cybersecurity, AI, machine learning, cloud computing, DevOps and automation, blockchain and cryptocurrency, data analytics, and big data, and 3) ethical and responsible tech development.
+Management information systems are systems used to provide information to manage organizations effectively. They include hardware, software, data, people, and procedures. Examples are Enterprise Resource Planning (ERP) systems, Customer Relationship Management (CRM) systems, and Supply Chain Management (SCM) systems.
+Yes. Systems design and analysis is a required course of our MSIT curriculum.

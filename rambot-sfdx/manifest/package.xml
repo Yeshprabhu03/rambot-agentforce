@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types><members>FacultyLookup</members><members>InfoSessionFinder</members><members>InfoSessionRegistration</members><members>ProgramCatalog</members><members>ProgramCostEstimator</members><members>ProspectLeadCapture</members><members>RamBotProspectPerms</members><members>RamBotProspectReports</members><members>RamBotProspectSeed</members><members>RamBotProspectSetup</members><name>ApexClass</name></types>
+  <types><members>RamBotSetup</members><members>ESWRamBotWebCha1793922820533</members><name>ApexPage</name></types>
+  <types><members>Application__c</members><members>Advising_Appointment__c</members><members>Faculty__c</members><members>Program__c</members><name>CustomObject</name></types>
+  <types><members>Lead.Program_Interest__c</members><members>Lead.Intended_Term__c</members><members>Lead.Is_International__c</members><members>Campaign.Event_Time__c</members><members>Campaign.Registration_URL__c</members><members>Campaign.Program_Focus__c</members><members>MessagingSession.Handoff_Summary__c</members><members>MessagingSession.Handled_By__c</members><name>CustomField</name></types>
+  <types><members>Get_Application_Status</members><members>Book_Advising_Appointment</members><members>Escalate_to_Advisor</members><members>Save_Handoff_Summary</members><members>RamBot_Messaging_Routing</members><members>RamBot_Escalate_to_Advisors</members><name>Flow</name></types>
+  <types><members>RamBot_Self_Org</members><name>RemoteSiteSetting</name></types>
+  <types><members>RamBot_Messaging_Sessions</members><name>ReportType</name></types>
+  <types><members>RamBot_Reports</members><members>RamBot_Reports/*</members><name>Report</name></types>
+  <types><members>RamBot_Dashboards</members><members>RamBot_Dashboards/*</members><name>Dashboard</name></types>
+  <types><members>*</members><name>FlexiPage</name></types>
+  <types><members>*</members><name>AiAuthoringBundle</name></types>
+  <types><members>*</members><name>GenAiPlannerBundle</name></types>
+  <types><members>*</members><name>GenAiPlugin</name></types>
+  <types><members>*</members><name>GenAiFunction</name></types>
+  <types><members>RamBot</members><name>Bot</name></types>
+  <types><members>*</members><name>Queue</name></types>
+  <types><members>*</members><name>QueueRoutingConfig</name></types>
+  <types><members>*</members><name>ServiceChannel</name></types>
+  <types><members>*</members><name>ServicePresenceStatus</name></types>
+  <types><members>*</members><name>MessagingChannel</name></types>
+  <types><members>*</members><name>EmbeddedServiceConfig</name></types>
+  <types><members>*</members><name>EmailTemplate</name></types>
+  <types><members>*</members><name>PermissionSet</name></types>
+  <version>62.0</version>
+</Package>
