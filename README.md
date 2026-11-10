@@ -71,7 +71,7 @@ A graduate admissions office is a small team serving a large audience that has m
 | "Where's my application?" | Verifies the application number and email, then returns status and missing items. On a mismatch it never says which value was wrong | Flow `Get_Application_Status` |
 | "Book me with an advisor" | Books only valid slots: in the future, on a weekday, 9 AM–5 PM Eastern, with the email matching the application. The platform asks for one confirmation first | Flow `Book_Advising_Appointment` + `require_user_confirmation` |
 | "Who teaches analytics?" | Looks up faculty by name (including nicknames and typos) or by topic | Apex `FacultyLookup` (187 faculty) |
-| "I want a real person" | Asks once, writes a handoff summary, and transfers the live chat to an available advisor | Flow `Save_Handoff_Summary` + `@utils.escalate` + Omni-Channel |
+| "I want a real person" | Asks once, writes a handoff summary that starts with the student's name and email, names the chat after the student and links their Lead, then transfers the live chat to an available advisor | Apex `HandoffSummary` + platform event `RamBot_Handoff__e` + `@utils.escalate` + Omni-Channel |
 | Off-topic, vague or hostile messages | Redirects, asks a clarifying question, or declines | `off_topic` and `ambiguous_question` subagents + platform guards |
 
 The agent is a **router plus 11 focused subagents**: GeneralFAQ, Prospective Students, Info Sessions, Application Status, Advising Appointments, Faculty Directory, Escalation, Capabilities, Off Topic, Ambiguous Question, and Topic Switch.
@@ -125,7 +125,7 @@ Working end to end in a Developer Edition org:
 - **Human handoff.** One confirmation, then a summary is saved and the chat is routed. In a direct test the advisor received the chat **about 3 seconds** after the student confirmed.
 - **Admissions dashboard**, with 5 reports on leads, registrations and chat handling.
 - **Data:** 15 programs, 187 faculty, 49 events, 8 sample applications, and 82 knowledge pages.
-- **Agent maturity:** 19 versions. The agent moved orgs once (the first org's 5 MB storage filled with the agent's own conversation logs). Because the agent is code, it was republished from this repo rather than rebuilt by hand.
+- **Agent maturity:** 21 versions. The agent moved orgs once (the first org's 5 MB storage filled with the agent's own conversation logs). Because the agent is code, it was republished from this repo rather than rebuilt by hand.
 
 ## 7. Testing
 

@@ -1,0 +1,49 @@
+{
+  "required" : [ "eventName", "eventDate", "firstName", "lastName", "email" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "email" : {
+      "title" : "Email",
+      "description" : "Student email address.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "eventDate" : {
+      "title" : "Event Date",
+      "description" : "Event date as YYYY-MM-DD, from Find Info Sessions.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "eventName" : {
+      "title" : "Event Name",
+      "description" : "Exact event name from Find Info Sessions.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "firstName" : {
+      "title" : "First Name",
+      "description" : "Student first name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "lastName" : {
+      "title" : "Last Name",
+      "description" : "Student last name.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "programInterest" : {
+      "title" : "Program Interest",
+      "description" : "Optional: program the student is interested in.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

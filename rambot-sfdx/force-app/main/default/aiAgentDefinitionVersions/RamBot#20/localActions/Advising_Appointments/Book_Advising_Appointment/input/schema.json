@@ -1,0 +1,35 @@
+{
+  "required" : [ "applicationNumber", "appointmentTime", "studentEmail", "topic" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "applicationNumber" : {
+      "title" : "applicationNumber",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "appointmentTime" : {
+      "title" : "appointmentTime",
+      "description" : "The confirmed date and time in ISO 8601 format with the US Eastern Time offset, for example 2027-03-02T14:00:00-05:00 (use -04:00 during daylight saving time). Never send a time without the offset.",
+      "lightning:type" : "lightning__dateTimeStringType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studentEmail" : {
+      "title" : "studentEmail",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "topic" : {
+      "title" : "topic",
+      "description" : "",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

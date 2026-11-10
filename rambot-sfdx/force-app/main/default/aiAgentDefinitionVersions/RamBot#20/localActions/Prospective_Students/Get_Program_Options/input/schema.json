@@ -1,0 +1,42 @@
+{
+  "required" : [ ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "degreeType" : {
+      "title" : "Degree Type",
+      "description" : "Optional: MS or MBA. Set it only when the student explicitly asks for an MS or an MBA; otherwise leave it blank so both are considered.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "keywords" : {
+      "title" : "Interest Keywords",
+      "description" : "Optional. Two or three subject areas or career goals in the student's words, e.g. investment banking, analytics, finance, AI, marketing, consulting. Leave blank to get every program.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "needsF1" : {
+      "title" : "Needs F-1 Visa",
+      "description" : "Optional: true if the student needs an F-1 student visa. Excludes online and part-time programs.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "onlineOnly" : {
+      "title" : "Online Only",
+      "description" : "Optional: true if the student wants to study online.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "stemOnly" : {
+      "title" : "STEM Only",
+      "description" : "Optional: true to return only STEM-designated programs.",
+      "lightning:type" : "lightning__booleanType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

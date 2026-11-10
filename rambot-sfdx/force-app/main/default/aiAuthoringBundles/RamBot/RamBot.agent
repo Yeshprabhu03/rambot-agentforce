@@ -206,8 +206,8 @@ subagent escalation:
         set @variables.escalation_turns = @variables.escalation_turns + 1
     reasoning:
         instructions: ->
-            |Check the conversation history first. If you have already read back a summary of the student's issue and the student replied with any confirmation (for example yes, correct, accurate, that's right, or please connect me), do NOT summarize or ask for confirmation again: say one short line that you are connecting them now and first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor), then call {!@actions.transfer_to_advisor} in this same turn. Otherwise, summarize the issue in one or two sentences and ask them to confirm exactly once.
-             After they confirm, tell them you are connecting them with an admissions advisor now, then first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor), then call {!@actions.transfer_to_advisor}. Do not ask for an application number or email before a live transfer.
+            |Check the conversation history first. If you have already read back a summary of the student's issue and the student replied with any confirmation (for example yes, correct, accurate, that's right, or please connect me), do NOT summarize or ask for confirmation again: say one short line that you are connecting them now and first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor) plus the student's name and email if they gave them earlier in this conversation, then call {!@actions.transfer_to_advisor} in this same turn. Otherwise, summarize the issue in one or two sentences and ask them to confirm exactly once.
+             After they confirm, tell them you are connecting them with an admissions advisor now, then first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor) plus the student's name and email if they gave them earlier in this conversation, then call {!@actions.transfer_to_advisor}. Do not ask for an application number or email before a live transfer.
              If the student would rather not wait, or the transfer fails because no advisor is available, offer an email follow-up instead: ask for their email, call {!@actions.Escalate_to_Advisor} with their email and the summary, and give them the case number.
              If Escalate to Advisor returns an error or no case number, apologize and suggest the student email the admissions office directly. Do not retry it more than once.
              Never promise a specific response time.
@@ -218,6 +218,8 @@ subagent escalation:
                 available when @variables.escalation_turns >= 2
                 with messagingSessionId = @variables.RoutableId
                 with summary = ...
+                with studentName = ...
+                with studentEmail = ...
             transfer_to_advisor: @utils.escalate
                 available when @variables.escalation_turns >= 2
                 description: "Transfer the conversation live to an admissions advisor in the Admissions Advisors queue."
@@ -231,7 +233,7 @@ subagent escalation:
         Save_Handoff_Summary:
             label: "Save Handoff Summary"
             description: "Saves a short handoff summary onto the current chat record so the human advisor sees it first."
-            target: "flow://Save_Handoff_Summary"
+            target: "apex://HandoffSummary"
             inputs:
                 messagingSessionId: string
                     label: "messagingSessionId"
@@ -240,7 +242,15 @@ subagent escalation:
                 summary: string
                     label: "summary"
                     is_required: True
-                    description: "Under 250 characters: the student's issue, what RamBot already answered or checked, and what the student needs from the advisor."
+                    description: "Under 250 characters: the student's issue, what RamBot already answered or checked, and what the student needs from the advisor. Write it without gendered pronouns: use the student's name or 'they', never he or she."
+                studentName: string
+                    label: "studentName"
+                    is_required: False
+                    description: "The student's first and last name, only if they gave it earlier in this conversation (for example when registering or asking for a follow-up). Leave blank otherwise; never guess."
+                studentEmail: string
+                    label: "studentEmail"
+                    is_required: False
+                    description: "The student's email address, only if they gave it earlier in this conversation. Leave blank otherwise."
             outputs:
                 summarySaved: string
                     label: "summarySaved"

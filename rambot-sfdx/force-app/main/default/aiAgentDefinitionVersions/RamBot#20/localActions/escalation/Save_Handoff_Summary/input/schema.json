@@ -1,0 +1,35 @@
+{
+  "required" : [ "messagingSessionId", "summary" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "messagingSessionId" : {
+      "title" : "messagingSessionId",
+      "description" : "The ID of the current messaging session.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studentEmail" : {
+      "title" : "studentEmail",
+      "description" : "The student's email address, only if they gave it earlier in this conversation. Leave blank otherwise.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "studentName" : {
+      "title" : "studentName",
+      "description" : "The student's first and last name, only if they gave it earlier in this conversation (for example when registering or asking for a follow-up). Leave blank otherwise; never guess.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "summary" : {
+      "title" : "summary",
+      "description" : "Under 250 characters: the student's issue, what RamBot already answered or checked, and what the student needs from the advisor.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

@@ -738,3 +738,18 @@ I read each of the 5 failures against the traces and the org's data:
   - engineer from India, data/AI, F-1: MSAIB (Artificial Intelligence; Machine Learning for Business; Law and Ethics of AI) and MSBA (Database Management and SQL; Machine Learning for Business; Web Analytics)
   - investment banking: MSF, MSQF and FTMBA, each with key courses; the "what courses would I take?" follow-up answered from the same data with no new action
   - every course named matches the field; none invented
+
+**Advisor sees who the student is (agent v20–v21).**
+- **Problem (your live test, MS-00000018):** the advisor's console showed the Messaging User as "Guest". The student (Tyler Markel) had given a name and email and RamBot had created a Lead, but the handoff only saved summary text, so nothing tied the chat to the person.
+- **Fix:**
+  - new Apex action `HandoffSummary` replaces the `Save_Handoff_Summary` flow. Optional inputs for the student's name and email, filled only if the student gave them in the chat.
+  - it finds the student's Lead by email (or, failing that, their Application name), starts the summary with "Name (email):", and links the chat's Lead field
+  - the summary is saved first, on its own, so nothing else can lose it
+  - renaming the Messaging User needs a platform event: the agent user's license can't edit MessagingEndUser (deploying the permission failed with "The user license doesn't allow the permission"). The action publishes `RamBot_Handoff__e`, and the trigger `RamBotHandoffTrigger`, running as the Automated Process user, sets the name and Lead.
+  - summary instruction: no gendered pronouns, use the student's name or "they". The first live test had RamBot call the student "She".
+- **What testing caught along the way:**
+  - the first version updated the queried MessagingSession record, which still carried the read-only MessagingEndUserId, so the update failed
+  - in a live chat as the agent user, the MessagingEndUser update failed and rolled back the whole action, summary included. Found with an Apex debug log on the agent user; it had worked when I ran it as admin.
+  - a chat keeps the agent version it started on, so a test chat opened before activation still ran the old version
+- **Result (live web chat, MS-00000024, v21):** Messaging User "Dana Whitfield", linked to Dana's Lead; summary "Dana Whitfield (dana.whitfield@example.com): Dana wants to know if an economics degree provides enough background for the MS in Business Analytics and would like to speak with an advisor." Tyler's chat (MS-00000018) was fixed the same way by running the action on it.
+- **Test records:** Lead Dana Whitfield (dana.whitfield@example.com); test chats MS-00000017, 20, 21, 24.
