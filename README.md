@@ -4,6 +4,8 @@ RamBot is an AI admissions assistant for graduate admissions at Fordham's Gabell
 
 > **Status: this project is still evolving.** It's a portfolio project built in a Salesforce Developer Edition org. It is not an official Fordham system, and all student records are made-up test data. The build log is in [rambot_progress_log.md](rambot_progress_log.md).
 
+**Try it live:** [RamBot web chat](https://orgfarm-74f758c996-dev-ed.develop.my.site.com/ESWRamBotWebCha1794095724605vforcesite/RamBotChatTest). Open the page and click the chat button in the lower right. Try *"Which program fits an engineer who wants a data role and needs an F-1 visa?"*, *"What would the MSBA cost me?"* or *"Check application A-1003 for priya.shah@example.com"*. It runs in a Developer Edition org, so it can be slow or briefly offline, and a human handoff only connects when an advisor is online.
+
 ---
 
 ## Contents
@@ -117,7 +119,7 @@ flowchart TD
 
 Working end to end in a Developer Edition org:
 
-- **Live web chat on a public page.** Students can talk to RamBot without logging in. The page also always shows crisis resources (988 / 911).
+- **Live web chat on a public page** ([open it](https://orgfarm-74f758c996-dev-ed.develop.my.site.com/ESWRamBotWebCha1794095724605vforcesite/RamBotChatTest)). Students can talk to RamBot without logging in. The page also always shows crisis resources (988 / 911).
 - **Prospect journey.** For example: "I'm an engineer in India who wants a data/AI role and needs an F-1 visa." RamBot ranks programs, then gives an exact cost (for example MSBA international with living costs: **$116,396**), captures a Lead for an advisor follow-up, and registers the student for a real event in Bangalore.
 - **Applicant self-service.** Verified status checks, plus advising appointments booked within business rules.
 - **Human handoff.** One confirmation, then a summary is saved and the chat is routed. In a direct test the advisor received the chat **about 3 seconds** after the student confirmed.
