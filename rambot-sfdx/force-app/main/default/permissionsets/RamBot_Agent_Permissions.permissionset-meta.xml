@@ -112,6 +112,10 @@
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>
         <editable>false</editable>
+        <field>Program__c.Key_Courses__c</field>
+        <readable>true</readable>
+    </fieldPermissions><fieldPermissions>
+        <editable>false</editable>
         <field>Program__c.Ideal_For__c</field>
         <readable>true</readable>
     </fieldPermissions><fieldPermissions>

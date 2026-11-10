@@ -726,3 +726,15 @@ I read each of the 5 failures against the traces and the org's data:
 - End leftover test chat MS-00000006; clean test records (ADV-0004/0005/0007/0008, Case 00001028).
 - Other cost files (MBA/MSL, scholarships, assistantships, loans) not refreshed to 2026–27.
 - Booking: proposed a "Check Advising Slot" action (weekday read-back before confirmation) and a single 4:30 PM last-start rule; double-booking prevention not built.- Course details (Nov 9): 8 programs have full curriculum pages in the library (MSA, MSF, MSM, MSMI, MSMM, MSQF, FTMBA, PMBA). For MSBA, MSAIB, MSIT, EMBA and the online programs, the overview pages already name core courses, sample electives and tracks. Preview check: "What courses would I take in the MSBA / MSAIB / MSIT?" each answered from knowledge with real core courses and electives and a source (3/3). The full course lists are only in the Fordham Bulletin (bulletin.fordham.edu), which couldn't be read from the browser pane or the web fetcher, so they aren't loaded yet. The Python bot's scrape (ai-engineering-fordham, 9,543 files) has the same Gabelli program and curriculum pages RamBot already uses and no Gabelli graduate Bulletin pages, so it adds nothing for courses. Optional later: a "Key Courses" field on Program__c so program recommendations can name signature courses.
+
+**Key courses on every program (agent v19).**
+- **Why:** course questions were answered only from the knowledge library, and program recommendations never named a course. Full course lists are only in the Fordham Bulletin, which isn't reachable from here; the Python bot's scrape has the same pages, so it didn't help.
+- **What I built:**
+  - a `Key_Courses__c` field on `Program__c`, readable by the agent (RamBot Agent Permissions) and editable by admins (RamBot Admin Data)
+  - values for all 15 programs, taken only from course names, tracks and focus areas on each program's own page. Programs whose pages name no courses (MSMI, MSMM) get focus areas instead. Also saved as a column in `rambot-data/gabelli_programs_2026-2027.csv`.
+  - `ProgramCatalog` adds a "Key courses" line to each program block; `ProspectLeadCapture` queries the field too, so the summary email includes it
+  - instruction in Prospective Students: name two or three key courses that match the student's goal, never invent courses, and answer "which courses?" follow-ups from that line
+- **Preview results (v19):**
+  - engineer from India, data/AI, F-1: MSAIB (Artificial Intelligence; Machine Learning for Business; Law and Ethics of AI) and MSBA (Database Management and SQL; Machine Learning for Business; Web Analytics)
+  - investment banking: MSF, MSQF and FTMBA, each with key courses; the "what courses would I take?" follow-up answered from the same data with no new action
+  - every course named matches the field; none invented

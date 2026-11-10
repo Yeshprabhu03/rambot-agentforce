@@ -97,7 +97,7 @@ public without sharing class ProspectLeadCapture {
         List<String> blocks = new List<String>();
         String interest = programInterest == null ? '' : programInterest.toLowerCase();
         for (Program__c p : [SELECT Name, Program_Code__c, Degree_Type__c, Format__c, Credits__c, Length__c, STEM_Designated__c, F1_Eligible__c,
-                Start_Terms__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c, Enrichment_Fee__c, Deadline_Track__c, Ideal_For__c, Program_URL__c
+                Start_Terms__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c, Enrichment_Fee__c, Deadline_Track__c, Ideal_For__c, Key_Courses__c, Program_URL__c
                 FROM Program__c ORDER BY Name]) {
             if (interest.contains(p.Name.toLowerCase()) || interest.contains(p.Program_Code__c.toLowerCase())) blocks.add(ProgramCatalog.describeWithLink(p));
         }

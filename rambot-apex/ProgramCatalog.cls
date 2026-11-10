@@ -16,7 +16,7 @@ public without sharing class ProgramCatalog {
     public class Response {
         @InvocableVariable(label='Program Count' description='Number of programs returned.')
         public Integer programCount;
-        @InvocableVariable(label='Programs' description='One block per program: credits, length, format, start terms, STEM and F-1 eligibility, 2026-27 tuition, who it suits, next application deadline and link.')
+        @InvocableVariable(label='Programs' description='One block per program: credits, length, format, start terms, STEM and F-1 eligibility, 2026-27 tuition, who it suits, key courses, next application deadline and link.')
         public String programs;
     }
 
@@ -25,7 +25,7 @@ public without sharing class ProgramCatalog {
         List<Response> out = new List<Response>();
         List<Program__c> all = [SELECT Name, Program_Code__c, Degree_Type__c, Format__c, Credits__c, Length__c, STEM_Designated__c,
             F1_Eligible__c, Start_Terms__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c, Enrichment_Fee__c,
-            Deadline_Track__c, Ideal_For__c, Program_URL__c FROM Program__c ORDER BY Degree_Type__c DESC, Name];
+            Deadline_Track__c, Ideal_For__c, Key_Courses__c, Program_URL__c FROM Program__c ORDER BY Degree_Type__c DESC, Name];
         for (Request req : requests) {
             List<Program__c> filtered = new List<Program__c>();
             for (Program__c p : all) {
@@ -130,6 +130,7 @@ public without sharing class ProgramCatalog {
             + '\n- 2026-27 tuition: ' + tuition
             + (p.Enrichment_Fee__c != null ? '\n- One-time enrichment fee: ' + money(p.Enrichment_Fee__c) : '')
             + '\n- Ideal for: ' + p.Ideal_For__c
+            + (String.isNotBlank(p.Key_Courses__c) ? '\n- Key courses: ' + p.Key_Courses__c : '')
             + '\n- Next deadline: ' + nextDeadline(p);
     }
 

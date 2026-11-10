@@ -60,7 +60,8 @@ A graduate admissions office is a small team serving a large audience that has m
 
 | Need | What RamBot does | Where the logic lives |
 |---|---|---|
-| "Which program fits me?" | Scores and ranks the 15 programs against the student's background and career goal, and filters for F-1/STEM, part-time or online | Apex `ProgramCatalog` |
+| "Which program fits me?" | Scores and ranks the 15 programs against the student's background and career goal, filters for F-1/STEM, part-time or online, and names 2–3 key courses for each pick | Apex `ProgramCatalog` + `Program__c.Key_Courses__c` |
+| "What courses would I take?" | Key courses and tracks for a recommended program, or a fuller answer from the curriculum pages | `Key_Courses__c` on each program; Data Library |
 | "What will it cost?" | Exact estimate of tuition, fees and optional living costs, for full-time, part-time, domestic or international students | Apex `ProgramCostEstimator` (the LLM never does the arithmetic) |
 | Admissions facts, such as deadlines, tests, scholarships and visas | Grounded answers from 82 curated 2026–27 pages | Agentforce Data Library (RAG) |
 | "When's the next info session?" / "Sign me up" | Lists real events and registers the student | Apex `InfoSessionFinder`, `InfoSessionRegistration` (Campaign / CampaignMember) |
@@ -122,7 +123,7 @@ Working end to end in a Developer Edition org:
 - **Human handoff.** One confirmation, then a summary is saved and the chat is routed. In a direct test the advisor received the chat **about 3 seconds** after the student confirmed.
 - **Admissions dashboard**, with 5 reports on leads, registrations and chat handling.
 - **Data:** 15 programs, 187 faculty, 49 events, 8 sample applications, and 82 knowledge pages.
-- **Agent maturity:** 18 versions. The agent moved orgs once (the first org's 5 MB storage filled with the agent's own conversation logs). Because the agent is code, it was republished from this repo rather than rebuilt by hand.
+- **Agent maturity:** 19 versions. The agent moved orgs once (the first org's 5 MB storage filled with the agent's own conversation logs). Because the agent is code, it was republished from this repo rather than rebuilt by hand.
 
 ## 7. Testing
 
