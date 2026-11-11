@@ -753,3 +753,18 @@ I read each of the 5 failures against the traces and the org's data:
   - a chat keeps the agent version it started on, so a test chat opened before activation still ran the old version
 - **Result (live web chat, MS-00000024, v21):** Messaging User "Dana Whitfield", linked to Dana's Lead; summary "Dana Whitfield (dana.whitfield@example.com): Dana wants to know if an economics degree provides enough background for the MS in Business Analytics and would like to speak with an advisor." Tyler's chat (MS-00000018) was fixed the same way by running the action on it.
 - **Test records:** Lead Dana Whitfield (dana.whitfield@example.com); test chats MS-00000017, 20, 21, 24.
+
+**Static analysis and user-mode hardening.**
+- **Tooling:** installed five Salesforce skills from forcedotcom/sf-skills (agentforce-test, agentforce-observe, dx-code-analyzer-run, dx-apexguru-scan, service-agentforce-human-escalation-configure). Code Analyzer needed Java; Homebrew can't build OpenJDK on this Intel Mac without Xcode, so Temurin 21 went into `~/.local/jdk` (checksum verified). Set `JAVA_HOME` to it before scanning.
+- **First Security scan (PMD, Graph Engine, Flow scanner):** 0 Critical, 46 High. Most were agent actions in system mode: `ApexCRUDViolation` ×34, plus `ApexFlsViolation` and `DatabaseOperationsMustUseWithSharing`. The agent user's permission set was enforced only by configuration, not in the code.
+- **Checked access before changing anything:** the agent user can read every Program, Faculty and Campaign field the actions use, and has Lead read/create/edit with the Lead fields (profile). Internal sharing is Public Read/Write on all RamBot objects, so `with sharing` doesn't hide records. Applicant email and name fields are deliberately not readable by the agent.
+- **Change:** every agent action is `with sharing` and uses `WITH USER_MODE` / `as user` / `AccessLevel.USER_MODE`. Three deliberate system-mode spots, each commented:
+  - applicant lookups by email, in ProspectLeadCapture and HandoffSummary (the agent must never search applications by email itself)
+  - the Campaign Member insert in InfoSessionRegistration (the agent has read-only Campaign access)
+  - the handoff trigger's MessagingEndUser update (not allowed by the agent's license)
+- **Proof:** new `RamBotAgentUserTest` (SeeAllData, `System.runAs` the agent user) covers catalog, cost (full-time, part-time, flat rate, unknown), faculty (name, typo, topic), events, lead capture, returning-lead update (no duplicate), registration, handoff summary and the trigger. 5/5 pass. The deploy with RunSpecifiedTests met the 75% per-class coverage rule. A live preview as the agent ran Get Program Options, Estimate Program Cost, Find Faculty and Find Info Sessions correctly. One long multi-turn preview misrouted an info-session question to Inappropriate Content with no action called; two reruns routed correctly, so it's a routing blip, not the Apex change.
+- **Rescan:** 0 Security findings in the agent classes and trigger; total High down from 46 to 23. What's left:
+  - setup scripts and their admin page (`RamBotProspect*`, `RamBotSetup`, `VfCsrf`): to remove after setup
+  - the status flow's system-context lookup, which is by design (number + email must match)
+  - the chat page's Embedded Messaging script, a false positive
+- **Code quality still open:** 124 statements without braces, 45 missing ApexDoc comments, complexity in ProgramCatalog's keyword scoring.

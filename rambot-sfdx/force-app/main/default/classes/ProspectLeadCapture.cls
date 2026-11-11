@@ -1,5 +1,6 @@
 // Agent action: saves a prospective student as a Lead for the admissions team and can email them their program summary.
-public without sharing class ProspectLeadCapture {
+// User mode everywhere except the applicant check, which is explicitly in system mode.
+public with sharing class ProspectLeadCapture {
     // Set by upsertLead: true when the email matches an Application already on file.
     public static Boolean lastWasApplicant = false;
 
@@ -57,7 +58,7 @@ public without sharing class ProspectLeadCapture {
     }
 
     public static Lead upsertLead(String firstName, String lastName, String email, String program, String term, String country, Boolean intl, String notes) {
-        List<Lead> existing = [SELECT Id, Description FROM Lead WHERE Email = :email AND IsConverted = false ORDER BY CreatedDate DESC LIMIT 1];
+        List<Lead> existing = [SELECT Id, Description FROM Lead WHERE Email = :email AND IsConverted = false WITH USER_MODE ORDER BY CreatedDate DESC LIMIT 1];
         Lead l = existing.isEmpty() ? new Lead() : existing[0];
         l.FirstName = firstName;
         l.LastName = lastName;
@@ -71,7 +72,8 @@ public without sharing class ProspectLeadCapture {
             l.Description = String.isBlank(l.Description) ? stamp : (l.Description + '\n' + stamp).left(32000);
         }
         // Flag returning applicants for the counselor. Email alone is not verification, so details stay on the Lead only.
-        List<Application__c> apps = [SELECT Name, Program__c, Status__c FROM Application__c WHERE Student_Email__c = :email LIMIT 5];
+        // System mode on purpose: the agent user cannot read applicant emails, so it can never look up an application by email itself.
+        List<Application__c> apps = [SELECT Name, Program__c, Status__c FROM Application__c WHERE Student_Email__c = :email WITH SYSTEM_MODE LIMIT 5];
         lastWasApplicant = !apps.isEmpty();
         if (lastWasApplicant) {
             List<String> refs = new List<String>();
@@ -83,11 +85,11 @@ public without sharing class ProspectLeadCapture {
         if (l.Id == null) {
             l.Company = 'Prospective Student';
             l.LeadSource = 'RamBot Web Chat';
-            List<Group> queue = [SELECT Id FROM Group WHERE Type = 'Queue' AND Name = 'Admissions Advisors' LIMIT 1];
+            List<Group> queue = [SELECT Id FROM Group WHERE Type = 'Queue' AND Name = 'Admissions Advisors' WITH USER_MODE LIMIT 1];
             if (!queue.isEmpty()) l.OwnerId = queue[0].Id;
-            insert l;
+            insert as user l;
         } else {
-            update l;
+            update as user l;
         }
         return l;
     }
@@ -98,7 +100,7 @@ public without sharing class ProspectLeadCapture {
         String interest = programInterest == null ? '' : programInterest.toLowerCase();
         for (Program__c p : [SELECT Name, Program_Code__c, Degree_Type__c, Format__c, Credits__c, Length__c, STEM_Designated__c, F1_Eligible__c,
                 Start_Terms__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c, Enrichment_Fee__c, Deadline_Track__c, Ideal_For__c, Key_Courses__c, Program_URL__c
-                FROM Program__c ORDER BY Name]) {
+                FROM Program__c WITH USER_MODE ORDER BY Name]) {
             if (interest.contains(p.Name.toLowerCase()) || interest.contains(p.Program_Code__c.toLowerCase())) blocks.add(ProgramCatalog.describeWithLink(p));
         }
         return 'Hi ' + firstName + ',\n\nThank you for your interest in the Gabelli School of Business at Fordham. Here is a summary of what we discussed.\n\n'

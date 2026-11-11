@@ -1,5 +1,5 @@
 // Agent action: calculates a 2026-27 cost estimate for one program so RamBot never does money math itself.
-public without sharing class ProgramCostEstimator {
+public with sharing class ProgramCostEstimator {
     // 2026-27 graduate fees from Fordham Student Financial Services (read 2026-11-06).
     static final Decimal FEES_PER_TERM = 377;
     static final Decimal HEALTH_INSURANCE_PER_YEAR = 1890 + 3342;
@@ -31,7 +31,7 @@ public without sharing class ProgramCostEstimator {
     @InvocableMethod(label='Estimate Program Cost' description='Calculates the 2026-27 cost of a Gabelli graduate program: tuition, fees, enrichment fee, and optionally international fees, health insurance and living costs.')
     public static List<Response> estimate(List<Request> requests) {
         List<Program__c> all = [SELECT Name, Program_Code__c, Credits__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c,
-            Enrichment_Fee__c, Typical_Terms__c, Length__c FROM Program__c];
+            Enrichment_Fee__c, Typical_Terms__c, Length__c FROM Program__c WITH USER_MODE];
         List<Response> out = new List<Response>();
         for (Request req : requests) {
             Response res = new Response();

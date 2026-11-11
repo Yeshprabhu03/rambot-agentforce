@@ -14,7 +14,8 @@ trigger RamBotHandoffTrigger on RamBot_Handoff__e (after insert) {
         }
         updates.add(meu);
     }
-    for (Database.SaveResult sr : Database.update(updates, false)) {
+    // System mode on purpose: this is the one write the agent user is not licensed for, so it runs here and only touches Name and LeadId.
+    for (Database.SaveResult sr : Database.update(updates, false, AccessLevel.SYSTEM_MODE)) {
         if (!sr.isSuccess()) {
             System.debug(LoggingLevel.WARN, 'RamBotHandoffTrigger: ' + sr.getErrors());
         }

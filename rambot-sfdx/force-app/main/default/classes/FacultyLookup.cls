@@ -1,4 +1,4 @@
-public without sharing class FacultyLookup {
+public with sharing class FacultyLookup {
     public class Request {
         @InvocableVariable(label='Faculty Name' description='Name of a Gabelli faculty member: full, first or last name, a nickname like Ben, or a misspelled name. Leave blank when listing faculty by department or topic. Do not include titles like Professor or Dr.' required=false)
         public String facultyName;
@@ -28,7 +28,7 @@ public without sharing class FacultyLookup {
     public static List<Result> find(List<Request> requests) {
         List<Faculty__c> everyone = [
             SELECT Name, Title__c, Department__c, Faculty_Type__c, Research_Areas__c, Education__c, Bio__c, Profile_URL__c
-            FROM Faculty__c ORDER BY Name LIMIT 2000
+            FROM Faculty__c WITH USER_MODE ORDER BY Name LIMIT 2000
         ];
         List<Result> results = new List<Result>();
         for (Request req : requests) {

@@ -1,5 +1,5 @@
 // Agent action: returns Gabelli graduate programs from the Program__c catalog (2026-27 rates) so RamBot can recommend a fit.
-public without sharing class ProgramCatalog {
+public with sharing class ProgramCatalog {
     public class Request {
         @InvocableVariable(label='Interest Keywords' description='Optional. Subject areas or goals in a few words, e.g. "analytics", "finance", "AI", "marketing", "management". Leave blank to get every program.')
         public String keywords;
@@ -25,7 +25,7 @@ public without sharing class ProgramCatalog {
         List<Response> out = new List<Response>();
         List<Program__c> all = [SELECT Name, Program_Code__c, Degree_Type__c, Format__c, Credits__c, Length__c, STEM_Designated__c,
             F1_Eligible__c, Start_Terms__c, Pricing_Model__c, Rate_Per_Credit__c, Program_Total_Tuition__c, Enrichment_Fee__c,
-            Deadline_Track__c, Ideal_For__c, Key_Courses__c, Program_URL__c FROM Program__c ORDER BY Degree_Type__c DESC, Name];
+            Deadline_Track__c, Ideal_For__c, Key_Courses__c, Program_URL__c FROM Program__c WITH USER_MODE ORDER BY Degree_Type__c DESC, Name];
         for (Request req : requests) {
             List<Program__c> filtered = new List<Program__c>();
             for (Program__c p : all) {

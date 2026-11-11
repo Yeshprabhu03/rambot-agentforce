@@ -1,5 +1,5 @@
 // Agent action: lists upcoming Gabelli admissions events (stored as Campaigns) for a program or topic.
-public without sharing class InfoSessionFinder {
+public with sharing class InfoSessionFinder {
     public class Request {
         @InvocableVariable(label='Program or Topic' description='Optional. Program or interest, e.g. "Business Analytics", "MBA", "Finance", "India". Leave blank for all upcoming events.')
         public String keyword;
@@ -15,7 +15,7 @@ public without sharing class InfoSessionFinder {
     @InvocableMethod(label='Find Info Sessions' description='Finds upcoming Gabelli graduate admissions information sessions, webinars and recruiting events, optionally for a program or location.')
     public static List<Response> find(List<Request> requests) {
         List<Campaign> upcoming = [SELECT Name, StartDate, Event_Time__c, Program_Focus__c, Registration_URL__c, Type FROM Campaign
-            WHERE IsActive = true AND Registration_URL__c != null AND StartDate >= TODAY ORDER BY StartDate, Name LIMIT 200];
+            WHERE IsActive = true AND Registration_URL__c != null AND StartDate >= TODAY WITH USER_MODE ORDER BY StartDate, Name LIMIT 200];
         List<Response> out = new List<Response>();
         for (Request req : requests) {
             List<Campaign> hits = new List<Campaign>();

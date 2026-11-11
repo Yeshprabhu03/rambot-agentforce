@@ -1,7 +1,8 @@
 // Agent action: saves the handoff summary on the chat and tells the advisor who the student is.
 // Names the chat's Messaging User after the student and links the chat to their Lead when one exists,
 // so the advisor sees "Tyler Markel" and the Lead instead of "Guest".
-public without sharing class HandoffSummary {
+// User mode everywhere except the applicant-name fallback, which is explicitly in system mode.
+public with sharing class HandoffSummary {
     static final Integer SUMMARY_MAX = 255;
 
     public class Request {
@@ -32,7 +33,7 @@ public without sharing class HandoffSummary {
     }
 
     static String saveOne(Request req) {
-        List<MessagingSession> sessions = [SELECT Id, MessagingEndUserId FROM MessagingSession WHERE Id = :req.messagingSessionId LIMIT 1];
+        List<MessagingSession> sessions = [SELECT Id, MessagingEndUserId FROM MessagingSession WHERE Id = :req.messagingSessionId WITH USER_MODE LIMIT 1];
         if (sessions.isEmpty()) {
             return 'Not saved: chat not found.';
         }
@@ -42,7 +43,7 @@ public without sharing class HandoffSummary {
         String name = String.isBlank(req.studentName) ? null : req.studentName.trim();
         Lead lead;
         if (email != null) {
-            List<Lead> leads = [SELECT Id, Name FROM Lead WHERE Email = :email AND IsConverted = false ORDER BY LastModifiedDate DESC LIMIT 1];
+            List<Lead> leads = [SELECT Id, Name FROM Lead WHERE Email = :email AND IsConverted = false WITH USER_MODE ORDER BY LastModifiedDate DESC LIMIT 1];
             if (!leads.isEmpty()) {
                 lead = leads[0];
             }
@@ -50,7 +51,8 @@ public without sharing class HandoffSummary {
                 name = lead.Name;
             }
             if (name == null) {
-                List<Application__c> apps = [SELECT Student_Name__c FROM Application__c WHERE Student_Email__c = :email LIMIT 1];
+                // System mode on purpose: the agent user cannot read applicant names or emails; only the name is used, for the advisor.
+                List<Application__c> apps = [SELECT Student_Name__c FROM Application__c WHERE Student_Email__c = :email WITH SYSTEM_MODE LIMIT 1];
                 if (!apps.isEmpty()) {
                     name = apps[0].Student_Name__c;
                 }
@@ -65,12 +67,12 @@ public without sharing class HandoffSummary {
         }
         // Update a fresh record: the queried one carries MessagingEndUserId, which can't be written back.
         // The summary is what the advisor needs most, so it is saved on its own first.
-        update new MessagingSession(Id = ms.Id, Handoff_Summary__c = text);
+        update as user new MessagingSession(Id = ms.Id, Handoff_Summary__c = text);
 
         // Naming the user and linking the Lead are best effort: a failure here must not lose the summary.
         Boolean linked = false;
         if (lead != null) {
-            linked = Database.update(new MessagingSession(Id = ms.Id, LeadId = lead.Id), false).isSuccess();
+            linked = Database.update(new MessagingSession(Id = ms.Id, LeadId = lead.Id), false, AccessLevel.USER_MODE).isSuccess();
         }
         // The agent user's license can't edit MessagingEndUser, so a platform event hands that to the Automated Process user.
         Boolean named = false;

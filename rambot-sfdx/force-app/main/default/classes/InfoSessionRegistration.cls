@@ -1,5 +1,6 @@
 // Agent action: records a prospective student's registration for an admissions event as a Campaign Member.
-public without sharing class InfoSessionRegistration {
+// User mode everywhere except the Campaign Member insert, which is explicitly in system mode.
+public with sharing class InfoSessionRegistration {
     public class Request {
         @InvocableVariable(label='Event Name' description='Exact event name from Find Info Sessions.' required=true)
         public String eventName;
@@ -33,7 +34,7 @@ public without sharing class InfoSessionRegistration {
                 Date d = Date.valueOf(req.eventDate.trim());
                 String name = req.eventName.trim().left(80);
                 List<Campaign> camps = [SELECT Id, Name, StartDate, Event_Time__c, Registration_URL__c FROM Campaign
-                    WHERE StartDate = :d AND Registration_URL__c != null AND (Name = :name OR Name LIKE :('%' + name.left(40) + '%')) LIMIT 1];
+                    WHERE StartDate = :d AND Registration_URL__c != null AND (Name = :name OR Name LIKE :('%' + name.left(40) + '%')) WITH USER_MODE LIMIT 1];
                 if (camps.isEmpty()) {
                     res.registered = false;
                     res.result = 'That event was not found. Call Find Info Sessions and use the exact name and date.';
@@ -43,8 +44,9 @@ public without sharing class InfoSessionRegistration {
                 Campaign c = camps[0];
                 Lead l = ProspectLeadCapture.upsertLead(req.firstName, req.lastName, req.email, req.programInterest, null, null, null,
                     'Registered for ' + c.Name + ' on ' + String.valueOf(c.StartDate) + '.');
-                if ([SELECT COUNT() FROM CampaignMember WHERE CampaignId = :c.Id AND LeadId = :l.Id] == 0) {
-                    insert new CampaignMember(CampaignId = c.Id, LeadId = l.Id, Status = 'Responded');
+                // System mode on purpose: the agent user can only read Campaigns, so membership is added on the admissions team's behalf.
+                if ([SELECT COUNT() FROM CampaignMember WHERE CampaignId = :c.Id AND LeadId = :l.Id WITH SYSTEM_MODE] == 0) {
+                    Database.insert(new CampaignMember(CampaignId = c.Id, LeadId = l.Id, Status = 'Responded'), AccessLevel.SYSTEM_MODE);
                 }
                 res.registered = true;
                 res.existingApplicant = ProspectLeadCapture.lastWasApplicant;
