@@ -69,9 +69,10 @@ A graduate admissions office is a small team serving a large audience that has m
 | "When's the next info session?" / "Sign me up" | Lists real events and registers the student | Apex `InfoSessionFinder`, `InfoSessionRegistration` (Campaign / CampaignMember) |
 | "Have someone contact me" | Creates or updates a Lead with program interest, intended term and international flag, routes it to the advisors' queue, and sends a confirmation email | Apex `ProspectLeadCapture` |
 | "Where's my application?" | Verifies the application number and email, then returns status and missing items. On a mismatch it never says which value was wrong | Flow `Get_Application_Status` |
-| "Book me with an advisor" | Books only valid slots: in the future, on a weekday, 9 AM–5 PM Eastern, with the email matching the application. The platform asks for one confirmation first | Flow `Book_Advising_Appointment` + `require_user_confirmation` |
+| "Book me with an advisor" (applicant) | Books only valid slots: in the future, on a weekday, 9 AM–5 PM Eastern, with the email matching the application. The platform asks for one confirmation first | Flow `Book_Advising_Appointment` + `require_user_confirmation` |
 | "Who teaches analytics?" | Looks up faculty by name (including nicknames and typos) or by topic | Apex `FacultyLookup` (187 faculty) |
-| "I want a real person" | Asks once, writes a handoff summary that starts with the student's name and email, names the chat after the student and links their Lead, then transfers the live chat to an available advisor | Apex `HandoffSummary` + platform event `RamBot_Handoff__e` + `@utils.escalate` + Omni-Channel |
+| "I want a real person" | Checks in code whether it is advising hours (Mon–Fri 9–5 ET) *and* an advisor is set to Available in Omni-Channel. **If so:** offers "chat now" or "book a call". Chat now writes a handoff summary that starts with the student's name and email, names the chat after the student, links their Lead and transfers the chat. **If not:** says no one is online, gives the hours and lists the next open call times. Live chat isn't offered at all, so there's no "someone will get back to you" | Apex `HandoffSummary` + platform event `RamBot_Handoff__e` + `@utils.escalate` + Omni-Channel |
+| "Book a call with an advisor" (anyone) | Books a 30-minute call at an open weekday time. Apex rejects weekends, after-hours times, times less than an hour away and times already taken, and offers other times instead. Saves the Lead, creates the appointment and emails a confirmation number. The platform asks for one confirmation first | Apex `AdvisorAvailability` + `ScheduleAdvisorCall` + `require_user_confirmation` |
 | Off-topic, vague or hostile messages | Redirects, asks a clarifying question, or declines | `off_topic` and `ambiguous_question` subagents + platform guards |
 
 The agent is a **router plus 11 focused subagents**: GeneralFAQ, Prospective Students, Info Sessions, Application Status, Advising Appointments, Faculty Directory, Escalation, Capabilities, Off Topic, Ambiguous Question, and Topic Switch.
@@ -235,7 +236,8 @@ This is an evolving project. What's next:
 - [ ] Move the remaining instruction-only behaviours into code, for example always running the cost estimator when a student gives their own rate (currently 3 of 4 runs).
 - [ ] Booking: read back available slots before confirming, and prevent double booking.
 - [ ] Registration: require one confirmed event and a real name before calling Register.
-- [ ] Verify the email/case fallback when no advisor is online.
+- [x] When no advisor is online, offer bookable call times instead of an open-ended "we'll get back to you".
+- [ ] Holidays in advising hours (only weekdays 9–5 ET today), and showing booked calls on the advisor's calendar.
 - [ ] Refresh the remaining cost content (MBA/MSL scholarships, assistantships, loans) to 2026–27.
 - [x] Apex tests that run every agent action as the agent user, with at least 75% coverage of the agent classes.
 - [ ] Tests for the one-time setup scripts, or remove them from the org after setup.

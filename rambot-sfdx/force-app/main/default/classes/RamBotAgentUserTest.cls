@@ -115,6 +115,61 @@ private class RamBotAgentUserTest {
     }
 
     @IsTest
+    static void advisorAvailabilityAndCallsAsAgent() {
+        // Wednesday 3 March 2027, 10:00 AM Eastern.
+        AdvisorCalendar.nowOverride = AdvisorCalendar.fromEastern(Date.newInstance(2027, 3, 3), 10, 0);
+        System.runAs(agentUser()) {
+            AdvisorAvailability.Response open = AdvisorAvailability.check(new List<AdvisorAvailability.Request>{ new AdvisorAvailability.Request() })[0];
+            Assert.isTrue(open.withinHours, 'Wednesday 10 AM ET is within hours');
+            Assert.isTrue(open.openSlots.contains('[slot 2027-03-03 11:00]'), open.openSlots);
+            Assert.isTrue(open.openSlots.contains('[slot 2027-03-03 13:00]'), 'First afternoon slot after lunch: ' + open.openSlots);
+
+            ScheduleAdvisorCall.Request ok = callRequest('2027-03-04 14:00');
+            ScheduleAdvisorCall.Response booked = ScheduleAdvisorCall.schedule(new List<ScheduleAdvisorCall.Request>{ ok })[0];
+            Assert.isTrue(booked.booked, 'Booking failed as agent: ' + booked.slotError);
+            Assert.isTrue(booked.confirmationNumber.startsWith('ADV-'), booked.confirmationNumber);
+            Assert.areEqual('Thursday, March 4 at 2:00 PM ET', booked.callTime);
+
+            List<String> badSlots = new List<String>{ '2027-03-04 14:00', '2027-03-06 11:00', '2027-03-04 17:00', '2027-03-04 14:15', '2027-03-03 10:30', '2027-02-30 10:00', 'tomorrow at 2' };
+            List<String> expected = new List<String>{ 'already taken', 'weekend', 'outside advising hours', 'half hour', 'less than an hour', 'could not be read', 'could not be read' };
+            for (Integer i = 0; i < badSlots.size(); i++) {
+                ScheduleAdvisorCall.Response r = ScheduleAdvisorCall.schedule(new List<ScheduleAdvisorCall.Request>{ callRequest(badSlots[i]) })[0];
+                Assert.isFalse(r.booked, badSlots[i] + ' should not book');
+                Assert.isTrue(r.slotError.contains(expected[i]), badSlots[i] + ': ' + r.slotError);
+                Assert.isTrue(r.otherOpenSlots.contains('[slot '), 'Should offer other times');
+            }
+            ScheduleAdvisorCall.Request noEmail = callRequest('2027-03-05 10:00');
+            noEmail.email = 'not-an-email';
+            Assert.isFalse(ScheduleAdvisorCall.schedule(new List<ScheduleAdvisorCall.Request>{ noEmail })[0].booked, 'Needs a real email');
+        }
+        Advising_Appointment__c appt = [SELECT Lead__c, Topic__c, Call_Notes__c FROM Advising_Appointment__c
+            WHERE Lead__r.Email = 'agent.call.test@example.com' LIMIT 1];
+        Assert.areEqual('Financial Aid', appt.Topic__c);
+
+        // Saturday: outside hours, so no live chat even if someone is online.
+        AdvisorCalendar.nowOverride = AdvisorCalendar.fromEastern(Date.newInstance(2027, 3, 6), 11, 0);
+        System.runAs(agentUser()) {
+            AdvisorAvailability.Response weekend = AdvisorAvailability.check(new List<AdvisorAvailability.Request>{ new AdvisorAvailability.Request() })[0];
+            Assert.isFalse(weekend.withinHours);
+            Assert.isFalse(weekend.liveAvailable);
+            Assert.isTrue(weekend.openSlots.startsWith('1. Monday, March 8 at 9:00 AM ET'), weekend.openSlots);
+        }
+        Assert.isNotNull(AdvisorCalendar.advisorOnline(), 'Presence check runs');
+    }
+
+    static ScheduleAdvisorCall.Request callRequest(String slot) {
+        ScheduleAdvisorCall.Request r = new ScheduleAdvisorCall.Request();
+        r.firstName = 'Agent';
+        r.lastName = 'Caller';
+        r.email = 'agent.call.test@example.com';
+        r.slot = slot;
+        r.topic = 'Financial Aid';
+        r.notes = 'Wants to discuss scholarships for the MSBA.';
+        r.programInterest = 'MS in Business Analytics';
+        return r;
+    }
+
+    @IsTest
     static void handoffSummaryAsAgent() {
         List<MessagingSession> chats = [SELECT Id FROM MessagingSession ORDER BY CreatedDate DESC LIMIT 1];
         if (chats.isEmpty()) {

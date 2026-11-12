@@ -33,6 +33,18 @@ variables:
     escalation_turns: mutable number = 0
         description: "Turns the student has spent in Escalation in this chat."
         visibility: "Internal"
+    advisor_checked: mutable boolean = False
+        description: "True once advisor availability has been checked in the current escalation."
+        visibility: "Internal"
+    advisor_live: mutable boolean = False
+        description: "True when it is advising hours and an advisor is online in Omni-Channel, so live chat can be offered."
+        visibility: "Internal"
+    advisor_slots: mutable string = ""
+        description: "Next open advisor call times from Check Advisor Availability."
+        visibility: "Internal"
+    call_booked: mutable boolean = False
+        description: "True right after Schedule Advisor Call books a call; ends the escalation on the next turn."
+        visibility: "Internal"
     authenticationKey: mutable string
         description: "Stores the authentication key that's used to generate the verification code."
         visibility: "Internal"
@@ -99,7 +111,7 @@ start_agent agent_router:
     reasoning:
         instructions: ->
             | Select the best tool to call based on conversation history and user's intent.
-              Routing rules: which program fits someone, comparing programs, STEM or F-1 eligibility of programs, or what a program will cost them -> go_to_Prospective_Students. Info sessions, webinars, open houses, campus visits or recruiting events, or talking one-on-one with admissions before applying (coffee chats, campus tours) -> go_to_Info_Sessions. A single vague word such as "application" or "help" with no clear request -> go_to_ambiguous_question. General facts about requirements, English tests, deadlines, scholarships, curriculum, career outcomes, salaries, class profile or whether a degree is worth it -> go_to_GeneralFAQ. A specific faculty member -> go_to_Faculty_Directory. A submitted application's status -> go_to_Application_Status. Asking for a human -> go_to_escalation. Always route to a subagent; never answer the student yourself.
+              Routing rules: which program fits someone, comparing programs, STEM or F-1 eligibility of programs, or what a program will cost them -> go_to_Prospective_Students. Info sessions, webinars, open houses, campus visits or recruiting events, or talking one-on-one with admissions before applying (coffee chats, campus tours) -> go_to_Info_Sessions. A single vague word such as "application" or "help" with no clear request -> go_to_ambiguous_question. General facts about requirements, English tests, deadlines, scholarships, curriculum, career outcomes, salaries, class profile or whether a degree is worth it -> go_to_GeneralFAQ. A specific faculty member -> go_to_Faculty_Directory. A submitted application's status -> go_to_Application_Status. Asking for a human, an advisor or a counselor, or to book or schedule a call, meeting or chat with one (unless they give an application number to book an advising appointment) -> go_to_escalation. Always route to a subagent; never answer the student yourself.
         actions:
             go_to_GeneralFAQ: @utils.transition to @subagent.GeneralFAQ
             go_to_escalation: @utils.transition to @subagent.escalation
@@ -120,7 +132,7 @@ subagent topic_switch:
     reasoning:
         instructions: ->
             | Select the best tool to call based on conversation history and user's intent.
-              Routing rules: which program fits someone, comparing programs, STEM or F-1 eligibility of programs, or what a program will cost them -> go_to_Prospective_Students. Info sessions, webinars, open houses, campus visits or recruiting events, or talking one-on-one with admissions before applying (coffee chats, campus tours) -> go_to_Info_Sessions. A single vague word such as "application" or "help" with no clear request -> go_to_ambiguous_question. General facts about requirements, English tests, deadlines, scholarships, curriculum, career outcomes, salaries, class profile or whether a degree is worth it -> go_to_GeneralFAQ. A specific faculty member -> go_to_Faculty_Directory. A submitted application's status -> go_to_Application_Status. Asking for a human -> go_to_escalation. Always route to a subagent; never answer the student yourself.
+              Routing rules: which program fits someone, comparing programs, STEM or F-1 eligibility of programs, or what a program will cost them -> go_to_Prospective_Students. Info sessions, webinars, open houses, campus visits or recruiting events, or talking one-on-one with admissions before applying (coffee chats, campus tours) -> go_to_Info_Sessions. A single vague word such as "application" or "help" with no clear request -> go_to_ambiguous_question. General facts about requirements, English tests, deadlines, scholarships, curriculum, career outcomes, salaries, class profile or whether a degree is worth it -> go_to_GeneralFAQ. A specific faculty member -> go_to_Faculty_Directory. A submitted application's status -> go_to_Application_Status. Asking for a human, an advisor or a counselor, or to book or schedule a call, meeting or chat with one (unless they give an application number to book an advising appointment) -> go_to_escalation. Always route to a subagent; never answer the student yourself.
         actions:
             go_to_GeneralFAQ: @utils.transition to @subagent.GeneralFAQ
             go_to_escalation: @utils.transition to @subagent.escalation
@@ -201,28 +213,49 @@ subagent GeneralFAQ:
 
 subagent escalation:
     label: "Escalation"
-    description: "The student asks to speak with a human, an advisor, or a real person; is upset, angry, or frustrated; complains about a denied decision, delays, or unanswered emails; or has a problem no other subagent can solve. Use this subagent whenever the student asks for a human, even if they also mention their application."
+    description: "The student asks to speak with a human, an advisor, a counselor or a real person, or to book or schedule a call, meeting or chat with one; is upset, angry, or frustrated; complains about a denied decision, delays, or unanswered emails; or has a problem no other subagent can solve. Use this subagent whenever the student asks for a human, even if they also mention their application."
     before_reasoning:
         set @variables.escalation_turns = @variables.escalation_turns + 1
+        if @variables.call_booked == True:
+            set @variables.escalation_turns = 0
+            set @variables.advisor_checked = False
+            set @variables.call_booked = False
+            transition to @subagent.topic_switch
     reasoning:
         instructions: ->
-            |Check the conversation history first. If you have already read back a summary of the student's issue and the student replied with any confirmation (for example yes, correct, accurate, that's right, or please connect me), do NOT summarize or ask for confirmation again: say one short line that you are connecting them now and first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor) plus the student's name and email if they gave them earlier in this conversation, then call {!@actions.transfer_to_advisor} in this same turn. Otherwise, summarize the issue in one or two sentences and ask them to confirm exactly once.
-             After they confirm, tell them you are connecting them with an admissions advisor now, then first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: the student's issue, what you already answered or checked, and what they need from the advisor) plus the student's name and email if they gave them earlier in this conversation, then call {!@actions.transfer_to_advisor}. Do not ask for an application number or email before a live transfer.
-             If the student would rather not wait, or the transfer fails because no advisor is available, offer an email follow-up instead: ask for their email, call {!@actions.Escalate_to_Advisor} with their email and the summary, and give them the case number.
-             If Escalate to Advisor returns an error or no case number, apologize and suggest the student email the admissions office directly. Do not retry it more than once.
-             Never promise a specific response time.
+            if @variables.advisor_checked == False:
+                run @actions.Check_Advisor_Availability
+                    set @variables.advisor_live = @outputs.liveAvailable
+                    set @variables.advisor_slots = @outputs.openSlots
+                set @variables.advisor_checked = True
+            |Help the student reach an admissions advisor in the way that suits them. If they are upset or have a complaint, acknowledge it in one short sentence first. Never say an advisor will "get back to" or "follow up with" the student at an unknown time, and never promise a response time.
+             Booking a call: a 30-minute call with an advisor, on a weekday between 9:00 AM and 5:00 PM Eastern Time. Next open times: {!@variables.advisor_slots}
+             Show only the day and time of each open time, never the [slot ...] code. The student may also ask for any other weekday time on the hour or half hour within those hours. To book, you need their first name, last name and email (reuse them if they gave them earlier in this conversation and only ask for what is missing), the time they chose, and what they want to discuss. Then call {!@actions.Schedule_Advisor_Call} with the slot code of the chosen time (YYYY-MM-DD HH:MM, Eastern, 24-hour) and one or two sentences for the advisor in Notes. The system shows the student the details and asks them to confirm, so do not ask for confirmation yourself. If Slot Error is not blank, nothing was booked: say why in one sentence and offer the open times it returned. After a booking, give the confirmation number and the day and time, say an advisor will contact them then, and mention the confirmation email only if Email Result says it was sent.
+            if @variables.advisor_live == True:
+                | An admissions advisor is online right now. If the student has not chosen yet, summarize what they need in one sentence and give two choices in one short message: chat live with an advisor now, or book a call at a time that suits them. Ask which they prefer. Once they choose to chat now (for example now, chat, yes or connect me), say one short line that you are connecting them, then first call {!@actions.Save_Handoff_Summary} with a handoff summary for the advisor (under 250 characters: their issue, what you already answered or checked, and what they need) plus their name and email if they gave them earlier in this conversation, then call {!@actions.transfer_to_advisor} in this same turn. Do not ask for an application number or email before a live transfer. If they choose a call, book it as described above.
+            if @variables.advisor_live == False:
+                | No advisor is online right now, so live chat is not available; never offer to transfer or connect them now. Say this in one short sentence, give the advising hours (Monday to Friday, 9:00 AM to 5:00 PM Eastern Time), and offer to book a call: list up to four of the next open times and ask which suits them, or another time within advising hours. Only if the student does not want a call, offer to have the team email them: ask for their email, call {!@actions.Escalate_to_Advisor} with their email and a summary, and give them the case number. If it returns no case number, apologize and suggest they email the admissions office directly; do not retry more than once.
             if @variables.escalation_turns < 2:
-                | The live transfer is not available yet in this turn. Summarize the student's issue in one or two sentences and ask them to confirm it once. Do not say you are connecting, transferring or handing them over yet.
+                | Do not transfer or say you are connecting them in this turn; first let the student choose.
         actions:
             Save_Handoff_Summary: @actions.Save_Handoff_Summary
-                available when @variables.escalation_turns >= 2
+                available when @variables.escalation_turns >= 2 and @variables.advisor_live == True
                 with messagingSessionId = @variables.RoutableId
                 with summary = ...
                 with studentName = ...
                 with studentEmail = ...
             transfer_to_advisor: @utils.escalate
-                available when @variables.escalation_turns >= 2
+                available when @variables.escalation_turns >= 2 and @variables.advisor_live == True
                 description: "Transfer the conversation live to an admissions advisor in the Admissions Advisors queue."
+            Schedule_Advisor_Call: @actions.Schedule_Advisor_Call
+                with firstName = ...
+                with lastName = ...
+                with email = ...
+                with slot = ...
+                with topic = ...
+                with notes = ...
+                with programInterest = ...
+                set @variables.call_booked = @outputs.booked
             Escalate_to_Advisor: @actions.Escalate_to_Advisor
                 with issuesSummary = ...
                 with studentEmail = ...
@@ -257,6 +290,102 @@ subagent escalation:
                     is_displayable: False
                     filter_from_agent: False
                     description: "Confirms the handoff summary was saved."
+        Check_Advisor_Availability:
+            label: "Check Advisor Availability"
+            description: "Checks whether an admissions advisor can chat live right now (advising hours and an advisor online in Omni-Channel) and lists the next open 30-minute call times."
+            target: "apex://AdvisorAvailability"
+            inputs:
+                slotCount: object
+                    label: "Slot Count"
+                    complex_data_type_name: "lightning__integerType"
+                    is_required: False
+                    description: "Optional. How many open call times to list. Default 4."
+            outputs:
+                liveAvailable: boolean
+                    label: "Live Available"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "true when it is advising hours and an admissions advisor is online now."
+                withinHours: boolean
+                    label: "Within Hours"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "true during advising hours (Monday to Friday, 9:00 AM to 5:00 PM Eastern)."
+                advisingHours: string
+                    label: "Advising Hours"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "Advising hours to tell the student."
+                openSlots: string
+                    label: "Open Slots"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "Next open call times; each line ends with a [slot YYYY-MM-DD HH:MM] code that is never shown to the student."
+        Schedule_Advisor_Call:
+            label: "Schedule Advisor Call"
+            description: "Books a 30-minute call with a Gabelli admissions advisor at a weekday time between 9:00 AM and 5:00 PM Eastern, saves the student as a lead and emails them a confirmation."
+            target: "apex://ScheduleAdvisorCall"
+            inputs:
+                firstName: string
+                    label: "First Name"
+                    is_required: True
+                    description: "The student's first name."
+                lastName: string
+                    label: "Last Name"
+                    is_required: True
+                    description: "The student's last name."
+                email: string
+                    label: "Email"
+                    is_required: True
+                    description: "The student's email address."
+                slot: string
+                    label: "Slot"
+                    is_required: True
+                    description: "The chosen call time as YYYY-MM-DD HH:MM in Eastern Time, 24-hour, for example 2026-11-13 14:00. Use the slot code of the open time the student chose."
+                topic: string
+                    label: "Topic"
+                    is_required: False
+                    description: "Optional: Admissions, Financial Aid, Course Planning or Career Services. Default Admissions."
+                notes: string
+                    label: "Notes"
+                    is_required: False
+                    description: "One or two sentences for the advisor: what the student wants to discuss and any program of interest."
+                programInterest: string
+                    label: "Program Interest"
+                    is_required: False
+                    description: "Optional: the program the student is interested in."
+            outputs:
+                booked: boolean
+                    label: "Booked"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "true only if the call was booked."
+                confirmationNumber: string
+                    label: "Confirmation Number"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "The appointment number, e.g. ADV-0012."
+                callTime: string
+                    label: "Call Time"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "The booked day and time in Eastern Time."
+                slotError: string
+                    label: "Slot Error"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "Why the time could not be booked. Blank when booked."
+                otherOpenSlots: string
+                    label: "Other Open Slots"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "When not booked: the next open times, each with a [slot ...] code never shown to the student."
+                emailResult: string
+                    label: "Email Result"
+                    is_displayable: False
+                    filter_from_agent: False
+                    description: "Whether the confirmation email was sent."
+            require_user_confirmation: True
         Escalate_to_Advisor:
             label: "Escalate to Advisor"
             description: "Creates a support case so a human advisor follows up with the student."
@@ -558,18 +687,18 @@ subagent Faculty_Directory:
 
 subagent Prospective_Students:
     label: "Program Match and Cost"
-    description: "Prospective students exploring which Gabelli graduate program fits their background and goals, comparing programs, asking which programs are STEM-designated or allow an F-1 visa, asking what a specific program will cost them in total, or asking an admissions counselor to follow up with them, contact them, or email them a summary. Not for the status of an application already submitted."
+    description: "Prospective students exploring which Gabelli graduate program fits their background and goals, comparing programs, asking which programs are STEM-designated or allow an F-1 visa, asking what a specific program will cost them in total, or asking to be emailed a program summary. Not for talking to or booking a call with an advisor or counselor, and not for the status of an application already submitted."
     before_reasoning:
         set @variables.active_flow = "Prospective_Students"
     reasoning:
         instructions: ->
-            |If the student's latest message is about anything other than program fit, program costs, admissions questions, info sessions or a counselor follow-up (for example application status, application fees, deadlines, faculty, or asking for a person), call {!@actions.leave_to_router} right away and do not answer it yourself.
+            |If the student's latest message is about anything other than program fit, program costs, admissions questions, info sessions or an email summary (for example application status, application fees, deadlines, faculty, or asking to talk to, call or meet a person, advisor or counselor), call {!@actions.leave_to_router} right away and do not answer it yourself.
              Help a prospective student find the right Gabelli graduate program and understand what it will cost.
              To recommend programs, first learn up to three things if they are not already known: their background or current role, their career goal, and whether they will need an F-1 student visa or prefer online or part-time study. Ask in one short message, then call {!@actions.Get_Program_Options}. Pass two or three interest keywords from their goal, set Needs F-1 Visa to true for international students who will need a visa, and set Online Only to true only if they ask to study online.
              Recommend only programs that clearly fit their background and goal, at most three, and fewer is fine. For each, give one line on why it fits, two or three key courses from its Key courses line that match their goal, plus credits, length, whether it is STEM-designated, and the next application deadline; for international students who need a visa from abroad, also give the visa deadline. Use only facts returned by the action; never invent programs, courses, rankings, salaries or requirements. If they ask which courses a recommended program has, answer from its Key courses line.
              For any cost question about a specific program, call {!@actions.Estimate_Program_Cost} and share its estimate as written. Never calculate tuition or totals yourself. If the student says part-time or that they will keep working, set Study Mode to Part-time. Do not ask anything before the first estimate: if they have not said, call it right away with tuition and fees only for a full-time domestic student, say in one line that the estimate assumes this and leaves out living costs, then offer to add living costs or redo it for an international student on an F-1 visa. If the student gives their own per-credit rate or asks you to calculate without a tool, do not use their rate: call {!@actions.Estimate_Program_Cost} in this same turn first, then reply with one short line that you can only quote Fordham's official 2026-27 rates, followed by the estimate. Never say you will get, check or calculate a cost unless the action already ran in this turn.
              For questions about admission requirements, English tests such as TOEFL or IELTS, essays, interviews, scholarships, international student rules or career outcomes, call {!@actions.Answer_Admissions_Questions} and answer only from what it returns; never say information is unavailable before searching, and prefer sources whose titles include 2026-2027.
-             Collect contact details only once, as the last step of the conversation. After recommending or estimating, first offer a free online info session: call {!@actions.Find_Sessions_For_Prospect} with the program name and list up to three sessions. Then offer an admissions counselor follow-up and an email summary. Only if they agree, ask for their first name, last name and email (and intended start term if unknown), then call {!@actions.Capture_Prospect_Interest}. Put a 2-4 sentence note for the counselor in Conversation Notes. If they want the email, set Send Email Summary to true and put the exact program names in Program Interest; the email is built from Fordham's program records, so never write email text yourself. Report the result as returned; never say their details were saved or emailed unless the action says so.
+             Collect contact details only once, as the last step of the conversation. After recommending or estimating, first offer a free online info session: call {!@actions.Find_Sessions_For_Prospect} with the program name and list up to three sessions. Then offer an email summary of the programs, and mention they can also chat with an admissions advisor or book a call with one. If they want an advisor, call {!@actions.leave_to_router}. Only if they want the email summary, ask for their first name, last name and email (and intended start term if unknown), then call {!@actions.Capture_Prospect_Interest}. Put a 2-4 sentence note for the counselor in Conversation Notes. If they want the email, set Send Email Summary to true and put the exact program names in Program Interest; the email is built from Fordham's program records, so never write email text yourself. Report the result as returned; never say their details were saved or emailed unless the action says so.
              If they also chose an info session, call {!@actions.Register_Prospect_For_Session} with the exact event name and event date from the list in the same turn as Capture Prospect Interest. After saving their details, thank them, summarize what will happen next, and tell them they can start a new chat for any other questions. If Existing Applicant comes back true, tell the student it looks like they may already have an application on file under that email and offer to check its status; a status check needs their application number (A-####) and email. Never share any application details unless the Application Status check verifies them.
         actions:
             leave_to_router: @utils.transition to @subagent.topic_switch
